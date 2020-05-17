@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+<title>Strona logowania</title>
+<body>
+
+<form method="post" th:action="@{/login-process}">
+
+    <label for="inputUserName">Użytkownik:</label>
+
+    <input id="inputUserName" placeholder="Podaj login" th:name="username" th:required="required" type="text"/>
+
+    <label for="inputPassword">Hasło:</label>
+
+    <input id="inputPassword" placeholder="Podaj hasło" th:name="password" th:required="required" type="text"/>
+
+    <button type="submit">Zaloguj</button>
+
+</form>
+
+</body>
+</html>
