@@ -50,4 +50,14 @@ public class Subject {
     public void setDateDeleted(Date dateDeleted) {
         this.dateDeleted = dateDeleted;
     }
+
+    @Override
+    public String toString() {
+        return "Subject{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", teacherId=" + teacherId +
+                ", dateDeleted=" + dateDeleted +
+                '}';
+    }
 }
