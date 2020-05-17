@@ -21,7 +21,7 @@ public class UserController {
     }
 
     @PostMapping("/registeruser")
-    public String addUser(@ModelAttribute UserDto userDto) {
+    public String registerUser(@ModelAttribute UserDto userDto) {
         userService.registerUser(userDto);
         return "redirect:/index";
 

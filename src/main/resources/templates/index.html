@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <!-- Required meta tags -->
     <meta charset="UTF-8">
@@ -32,105 +32,10 @@
                 <div aria-labelledby="start" class="dropdown-menu">
                     <a class="dropdown-item" data-target="#loginModal" data-toggle="modal">Logowanie</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" data-target="#registrationModal" data-toggle="modal">Rejestracja</a>
+                    <a class="dropdown-item" href="/registeruser">Rejestracja</a>
                 </div>
             </li>
 
-            <!-- Modal -->
-            <div aria-hidden="true" aria-labelledby="registrationModalLabel" class="modal fade" id="registrationModal"
-                 role="dialog" tabindex="-1">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="registrationModalLabel">Panel rejestracji</h5>
-                            <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-
-                            <form action="register" id="registration" method="post">
-                                <div class="form-row">
-                                    <div class="form-group col-md-6">
-                                        <label>Imię</label>
-                                        <input class="form-control" name="name" placeholder="Name" type="text">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label>Nazwisko</label>
-                                        <input class="form-control" name="surname" placeholder="Surname" type="text">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label>Email</label>
-                                    <input class="form-control" name="email" placeholder="Email" type="text">
-                                </div>
-                                <div class="form-group">
-                                    <label>Hasło</label>
-                                    <input class="form-control" name="password" placeholder="Password" type="text">
-                                </div>
-                                <div class="form-group">
-                                    <label for="Type" id="type">Typ konta</label>
-                                    <select class="custom-select" name="type">
-                                        <option selected>Wybierz typ konta</option>
-                                        <option value="STUDENT">Uczeń</option>
-                                        <option value="TEACHER">Nauczyciel</option>
-                                        <option value="DIRECTOR">Dyrektor</option>
-                                        <option value="PARENT">Rodzic</option>
-                                    </select>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-
-                            <button class="btn btn-secondary" data-dismiss="modal" type="button">Anuluj</button>
-                            <button class="btn btn-primary" form="registration" type="submit">Zarejestruj</button>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- Modal -->
-            <div aria-hidden="true" aria-labelledby="loginModalLabel" class="modal fade" id="loginModal"
-                 role="dialog" tabindex="-1">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="loginModalLabel">Panel logowania</h5>
-                            <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-
-
-                            <form action="login" id="login" method="post">
-                                <div class="form-group row">
-                                    <label class="col-4 col-form-label" for="inputEmail">Twój adres e-mail</label>
-                                    <div class="col-8">
-                                        <input class="form-control" id="inputEmail" name="inputEmail"
-                                               placeholder="e-mail"
-                                               type="text">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-4 col-form-label" for="inputPassword">Twoje hasło</label>
-                                    <div class="col-8">
-                                        <input class="form-control" id="inputPassword" name="inputPassword"
-                                               placeholder="Password" type="password">
-                                    </div>
-                                </div>
-                            </form>
-
-                        </div>
-                        <div class="modal-footer">
-                            <button class="btn btn-secondary" data-dismiss="modal" type="button">Anuluj</button>
-                            <button class="btn btn-primary" form="login" type="submit">Zaloguj</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
 
         </ul>

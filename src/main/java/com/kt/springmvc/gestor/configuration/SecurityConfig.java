@@ -25,8 +25,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 "ROLE_DIRECTOR", "ROLE_TEACHER", "ROLE_PARENT", "ROLE_STUDENT")
                 .antMatchers("/h2-console/**").hasAnyAuthority(
                 "ROLE_DIRECTOR")
-                .antMatchers("/register/**").hasAnyAuthority(
-                "ROLE_DIRECTOR", "ROLE_TEACHER", "ROLE_PARENT", "ROLE_STUDENT")
                 .anyRequest().permitAll()
                 .and()
                 .csrf().disable()
