@@ -2,7 +2,7 @@ package com.kt.springmvc.gestor.model.dto;
 
 import java.util.Date;
 
-public class GroupDto {
+public class GrupDto {
 
     private Long id;
     private String name;
