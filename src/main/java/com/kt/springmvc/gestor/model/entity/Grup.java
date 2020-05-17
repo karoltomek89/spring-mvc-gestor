@@ -7,16 +7,15 @@ import javax.persistence.Id;
 import java.util.Date;
 
 @Entity
-public class Group {
+public class Grup {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String name;
-    private Integer teachertId;
+    private Integer teacherId;
     private Date dateDeleted;
 
-    public Group() {
+    public Grup() {
     }
 
     public Long getId() {
@@ -35,12 +34,12 @@ public class Group {
         this.name = name;
     }
 
-    public Integer getTeachertId() {
-        return teachertId;
+    public Integer getTeacherId() {
+        return teacherId;
     }
 
-    public void setTeachertId(Integer teachertId) {
-        this.teachertId = teachertId;
+    public void setTeacherId(Integer teacherId) {
+        this.teacherId = teacherId;
     }
 
     public Date getDateDeleted() {
@@ -53,10 +52,10 @@ public class Group {
 
     @Override
     public String toString() {
-        return "Group{" +
+        return "Grup{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", teachertId=" + teachertId +
+                ", teacherId=" + teacherId +
                 ", dateDeleted=" + dateDeleted +
                 '}';
     }

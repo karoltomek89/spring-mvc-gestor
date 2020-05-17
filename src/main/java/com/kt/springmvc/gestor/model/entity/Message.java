@@ -11,11 +11,9 @@ public class Message {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    private String from;
-    private String to;
+    private String sender;
+    private String receiver;
     private String text;
-    private Date dateDeleted;
 
     public Message() {
     }
@@ -28,20 +26,20 @@ public class Message {
         this.id = id;
     }
 
-    public String getFrom() {
-        return from;
+    public String getSender() {
+        return sender;
     }
 
-    public void setFrom(String from) {
-        this.from = from;
+    public void setSender(String sender) {
+        this.sender = sender;
     }
 
-    public String getTo() {
-        return to;
+    public String getReceiver() {
+        return receiver;
     }
 
-    public void setTo(String to) {
-        this.to = to;
+    public void setReceiver(String receiver) {
+        this.receiver = receiver;
     }
 
     public String getText() {
@@ -52,22 +50,13 @@ public class Message {
         this.text = text;
     }
 
-    public Date getDateDeleted() {
-        return dateDeleted;
-    }
-
-    public void setDateDeleted(Date dateDeleted) {
-        this.dateDeleted = dateDeleted;
-    }
-
     @Override
     public String toString() {
         return "Message{" +
                 "id=" + id +
-                ", from='" + from + '\'' +
-                ", to='" + to + '\'' +
+                ", sender='" + sender + '\'' +
+                ", receiver='" + receiver + '\'' +
                 ", text='" + text + '\'' +
-                ", dateDeleted=" + dateDeleted +
                 '}';
     }
 }
