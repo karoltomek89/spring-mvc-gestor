@@ -52,7 +52,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .failureUrl("/login?error")
                 .successHandler(myAuthenticationSuccessHandler)
                 .and()
-                .logout().logoutSuccessUrl("/login");
+                .logout().logoutSuccessUrl("/index");
     }
 
 

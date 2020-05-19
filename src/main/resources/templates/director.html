@@ -45,33 +45,51 @@
 
 
 <div class="row">
-    <div class="col-2">
+    <div class="col-1">
         <div aria-orientation="vertical" class="nav flex-column nav-pills" id="v-pills-tab" role="tablist">
-            <a aria-controls="v-pills-about" aria-selected="true" class="nav-link" data-toggle="pill"
-               href="#v-pills-about"
-               id="v-pills-about-tab" role="tab">O programie Gestor</a>
-            <a aria-controls="v-pills-help" aria-selected="false" class="nav-link" data-toggle="pill"
-               href="#v-pills-help"
-               id="v-pills-help-tab" role="tab">Pomoc</a>
-            <a aria-controls="v-pills-contact" aria-selected="false" class="nav-link" data-toggle="pill"
-               href="#v-pills-contact"
-               id="v-pills-contact-tab" role="tab">Kontakt</a>
+            <a aria-controls="v-pills-user" aria-selected="false" class="nav-link"
+               href="${pageContext.request.contextPath}/info"
+               id="v-pills-user-tab" role="tab">Info</a>
+            <a aria-controls="v-pills-grades" aria-selected="true" class="nav-link"
+               href="${pageContext.request.contextPath}/getgrouplistforgrades" id="v-pills-grades-tab" role="tab">Dodaj
+                ocenę</a>
+            <a aria-controls="v-pills-notes" aria-selected="false" class="nav-link" data-toggle="pill"
+               href="#v-pills-notes"
+               id="v-pills-notes-tab" role="tab">Uwagi</a>
+            <a aria-controls="v-pills-homework" aria-selected="false" class="nav-link" data-toggle="pill"
+               href="#v-pills-homework"
+               id="v-pills-homework-tab" role="tab">Prace domowe</a>
+            <a aria-controls="v-pills-students" aria-selected="false" class="nav-link" data-toggle="pill"
+               href="#v-pills-students"
+               id="v-pills-students-tab" role="tab">Uczniowie</a>
+            <a aria-controls="v-pills-messages" aria-selected="false"
+               class="nav-link"
+               href="${pageContext.request.contextPath}/getgrouplistformessages"
+               id="v-pills-messages-tab" role="tab">Wiadomości</a>
+            <a aria-controls="v-pills-logout" aria-selected="false" class="nav-link" href="/logout"
+               id="v-pills-logout-tab" role="tab">Wyloguj</a>
+
         </div>
     </div>
-    <div class="col-10">
+    <div class="col-11">
         <div class="tab-content" id="v-pills-tabContent">
-            <div aria-labelledby="v-pills-about-tab" class="tab-pane fade" id="v-pills-about" role="tabpanel">Opis
-                programu
+            <div aria-labelledby="v-pills-notes-tab" class="tab-pane fade" id="v-pills-notes"
+                 role="tabpanel">
+                Tutaj będzie można dodać uczniowi uwagi.
             </div>
-            <div aria-labelledby="v-pills-help-tab" class="tab-pane fade" id="v-pills-help" role="tabpanel">Instrukcje
-                użytkowania
+            <div aria-labelledby="v-pills-homework-tab" class="tab-pane fade" id="v-pills-homework"
+                 role="tabpanel">
+                Tutaj będzie można dodać uczniom prace domowe.
             </div>
-            <div aria-labelledby="v-pills-contact-tab" class="tab-pane fade" id="v-pills-contact" role="tabpanel">
-                Informacje kontaktowe
+            <div aria-labelledby="v-pills-students-tab" class="tab-pane fade" id="v-pills-students"
+                 role="tabpanel">
+                Tutaj będzie można przeglądać dane o uczniach.
             </div>
         </div>
     </div>
 </div>
+
+
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script crossorigin="anonymous" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
