@@ -9,6 +9,9 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 
 @Service
 public class UserService {
@@ -28,6 +31,19 @@ public class UserService {
         user.setPassword(passwordEncoder.encode((user.getPassword())));
         user = userRepository.save(user);
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+    }
+
+    public List<UserDto> getAllUsers() {
+        return userRepository.findAll()
+                .stream()
+                .map(u -> modelMapper.map(u, UserDto.class))
+                .collect(Collectors.toList());
+    }
+
+    public void activateUser(Long id) {
+        User user = userRepository.findById(id).get();
+        user.setActive(true);
+        userRepository.save(user);
     }
 
 }

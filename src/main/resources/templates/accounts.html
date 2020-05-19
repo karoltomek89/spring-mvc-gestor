@@ -12,7 +12,6 @@
     <title>Gestor - Twój elektroniczny dziennik</title>
 </head>
 <body>
-<h1>dyrektor</h1>
 <nav class="navbar navbar-expand-xl navbar-dark bg-primary">
     <a class="navbar-brand" href="#">Panel nawigacyjny</a>
     <button aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation"
@@ -51,7 +50,7 @@
             <a aria-controls="v-pills-info" aria-selected="false" class="nav-link"
                href="/info" id="v-pills-info-tab" role="tab">Info</a>
 
-            <a aria-controls="v-pills-accounts" aria-selected="false" class="nav-link"
+            <a aria-controls="v-pills-accounts" aria-selected="true" class="nav-link active"
                href="/accounts" id="v-pills-accounts-tab" role="tab">Zarządzaj kontami</a>
 
             <a aria-controls="v-pills-subjects" aria-selected="false" class="nav-link"
@@ -74,6 +73,49 @@
 
         </div>
     </div>
+
+
+    <div class="col-11">
+        <div class="tab-content" id="v-pills-tabContent">
+            <div aria-labelledby="v-pills-accounts-tab" class="tab-pane fade show active" id="v-pills-grades"
+                 role="tabpanel">
+
+
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th scope="col">Imię i nawisko</th>
+                        <th scope="col">e-mail</th>
+                        <th scope="col">Typ konta</th>
+                        <th scope="col">Aktywowane</th>
+                        <th scope="col">Aktywacja</th>
+                        <th scope="col">Data usunięcia</th>
+                        <th scope="col">Usuń</th>
+                    </tr>
+                    </thead>
+                    <tbody>|
+                    <tr th:each="user : ${userList}">
+                        <form action="/activateaccount" method="post" th:object="${user}">
+                            <td th:text="${user.name} + ${user.surname}" type="number"></td>
+                            <td th:text="${user.email}"></td>
+                            <td th:text="${user.role}"></td>
+                            <td th:text="${user.active}"></td>
+                            <td>
+                                <input name="id" th:value="${user.id}" type="hidden">
+                                <button class="btn btn-" value="activate">Aktywuj</button>
+                            </td>
+                            <td th:datetime="${user.dateDeleted}"></td>
+                        </form>
+                    </tr>
+                    </tbody>
+                </table>
+
+
+            </div>
+        </div>
+    </div>
+
+
 </div>
 
 
