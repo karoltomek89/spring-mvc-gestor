@@ -1,9 +1,9 @@
 image: maven:latest
 
 stages:
-  - build
-  - test
-  - run
+#  - build
+#  - test
+#  - run
 
 variables:
   MAVEN_CLI_OPTS: "--batch-mode"
