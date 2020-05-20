@@ -9,6 +9,8 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.sql.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -43,6 +45,13 @@ public class UserService {
     public void activateUser(Long id) {
         User user = userRepository.findById(id).get();
         user.setActive(true);
+        userRepository.save(user);
+    }
+
+    public void deleteUser(Long id) {
+        Date date = Date.valueOf(LocalDate.now());
+        User user = userRepository.findById(id).get();
+        user.setDateDeleted(date);
         userRepository.save(user);
     }
 
