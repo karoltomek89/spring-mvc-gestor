@@ -12,9 +12,8 @@
     <title>Gestor - Twój elektroniczny dziennik</title>
 </head>
 <body>
-<h1>nauczyciel</h1>
 <nav class="navbar navbar-expand-xl navbar-dark bg-primary">
-    <a class="navbar-brand" href="#">Panel nawigacyjny</a>
+    <a class="navbar-brand" href="#">Panel nauczyciela</a>
     <button aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation"
             class="navbar-toggler"
             data-target="#navbarNavAltMarkup" data-toggle="collapse" type="button">
@@ -45,33 +44,29 @@
 
 
 <div class="row">
-    <div class="col-2">
+    <div class="col-1">
         <div aria-orientation="vertical" class="nav flex-column nav-pills" id="v-pills-tab" role="tablist">
-            <a aria-controls="v-pills-about" aria-selected="true" class="nav-link" data-toggle="pill"
-               href="#v-pills-about"
-               id="v-pills-about-tab" role="tab">O programie Gestor</a>
-            <a aria-controls="v-pills-help" aria-selected="false" class="nav-link" data-toggle="pill"
-               href="#v-pills-help"
-               id="v-pills-help-tab" role="tab">Pomoc</a>
-            <a aria-controls="v-pills-contact" aria-selected="false" class="nav-link" data-toggle="pill"
-               href="#v-pills-contact"
-               id="v-pills-contact-tab" role="tab">Kontakt</a>
-        </div>
-    </div>
-    <div class="col-10">
-        <div class="tab-content" id="v-pills-tabContent">
-            <div aria-labelledby="v-pills-about-tab" class="tab-pane fade" id="v-pills-about" role="tabpanel">Opis
-                programu
-            </div>
-            <div aria-labelledby="v-pills-help-tab" class="tab-pane fade" id="v-pills-help" role="tabpanel">Instrukcje
-                użytkowania
-            </div>
-            <div aria-labelledby="v-pills-contact-tab" class="tab-pane fade" id="v-pills-contact" role="tabpanel">
-                Informacje kontaktowe
-            </div>
+
+            <a aria-controls="v-pills-info" aria-selected="false" class="nav-link"
+               href="/info" id="v-pills-info-tab" role="tab">Info</a>
+
+            <a aria-controls="v-pills-parents" aria-selected="false" class="nav-link"
+               href="/users" id="v-pills-parents-tab" role="tab">Zarządzaj rodzicami</a>
+
+            <a aria-controls="v-pills-grades" aria-selected="false" class="nav-link"
+               href="/subjects" id="v-pills-grades-tab" role="tab">Zarządzaj ocenami</a>
+
+            <a aria-controls="v-pills-messages" aria-selected="false" class="nav-link"
+               href="/messages" id="v-pills-messages-tab" role="tab">Wiadomości</a>
+
+            <a aria-controls="v-pills-logout" aria-selected="false" class="nav-link"
+               href="/logout" id="v-pills-logout-tab" role="tab">Wyloguj</a>
+
         </div>
     </div>
 </div>
+
+
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script crossorigin="anonymous" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
