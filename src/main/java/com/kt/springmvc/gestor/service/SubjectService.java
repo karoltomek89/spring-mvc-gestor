@@ -39,10 +39,12 @@ public class SubjectService {
     }
 
     public List<SubjectDto> getAllSubjects() {
-        return subjectRepository.findAll()
+        List<SubjectDto> subjectDtoList = subjectRepository.findAll()
                 .stream()
                 .map(s -> modelMapper.map(s, SubjectDto.class))
                 .collect(Collectors.toList());
+        subjectDtoList.stream().forEach((sub) -> sub.setUserSurname(userRepository.findById(sub.getUserId()).get().getName()));
+        return subjectDtoList;
     }
 
     public void deleteSubject(Long id) {

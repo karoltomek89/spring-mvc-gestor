@@ -1,7 +1,5 @@
 package com.kt.springmvc.gestor.model.dto;
 
-import com.kt.springmvc.gestor.model.entity.User;
-
 import java.util.Date;
 
 public class SubjectDto {
