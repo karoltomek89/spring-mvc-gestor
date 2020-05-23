@@ -3,7 +3,9 @@ package com.kt.springmvc.gestor.service;
 import com.kt.springmvc.gestor.model.dto.SubjectDto;
 import com.kt.springmvc.gestor.model.dto.SubjectDto;
 import com.kt.springmvc.gestor.model.entity.Subject;
+import com.kt.springmvc.gestor.model.entity.User;
 import com.kt.springmvc.gestor.repository.SubjectRepository;
+import com.kt.springmvc.gestor.repository.UserRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -21,14 +23,18 @@ public class SubjectService {
 
     private ModelMapper modelMapper;
     private SubjectRepository subjectRepository;
+    private UserRepository userRepository;
 
-    public SubjectService(ModelMapper modelMapper, SubjectRepository subjectRepository) {
+    public SubjectService(ModelMapper modelMapper, SubjectRepository subjectRepository, UserRepository userRepository) {
         this.modelMapper = modelMapper;
         this.subjectRepository = subjectRepository;
+        this.userRepository = userRepository;
     }
 
     public void registerSubject(SubjectDto subjectDto) {
         Subject subject = modelMapper.map(subjectDto, Subject.class);
+        User user = userRepository.findById(subjectDto.getUserId()).get();
+        subject.setUser(user);
         subject = subjectRepository.save(subject);
     }
 

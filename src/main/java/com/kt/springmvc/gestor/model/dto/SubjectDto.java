@@ -8,8 +8,26 @@ public class SubjectDto {
 
     private Long id;
     private String name;
-    private User user;
+    private Long userId;
     private Date dateDeleted;
+    private String userName;
+    private String userSurname;
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getUserSurname() {
+        return userSurname;
+    }
+
+    public void setUserSurname(String userSurname) {
+        this.userSurname = userSurname;
+    }
 
     public Long getId() {
         return id;
@@ -27,12 +45,12 @@ public class SubjectDto {
         this.name = name;
     }
 
-    public User getUser() {
-        return user;
+    public Long getUserId() {
+        return userId;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
     public Date getDateDeleted() {

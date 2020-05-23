@@ -96,7 +96,7 @@
                             <tr th:each="subject : ${subjectsList}">
                                 <td th:text="${subject.id}"></td>
                                 <td th:text="${subject.name}"></td>
-                                <td th:text="${subject.id}"></td>
+                                <td th:text="${subject}"></td>
                                 <td th:text="${subject.id}"></td>
                             </tr>
                             </tbody>
@@ -123,7 +123,7 @@
 
                             <div class="form-group">
                                 <label>Wybierz nauczyciela</label>
-                                <select class="custom-select" th:field="*{user.id}">
+                                <select class="custom-select" th:field="*{userId}">
                                     <option th:each="teacher : ${teachersList}"
                                             th:text="${teacher.name} + ${ teacher.surname}"
                                             th:value="${teacher.id}">
