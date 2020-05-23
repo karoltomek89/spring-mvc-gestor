@@ -42,6 +42,13 @@ public class UserService {
                 .collect(Collectors.toList());
     }
 
+    public List<UserDto> getTeachers() {
+        return userRepository.findByRole("ROLE_TEACHER")
+                .stream()
+                .map(u -> modelMapper.map(u, UserDto.class))
+                .collect(Collectors.toList());
+    }
+
     public void activateUser(Long id) {
         User user = userRepository.findById(id).get();
         user.setActive(true);

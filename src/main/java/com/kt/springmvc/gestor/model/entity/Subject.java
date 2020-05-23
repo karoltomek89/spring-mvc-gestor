@@ -1,9 +1,6 @@
 package com.kt.springmvc.gestor.model.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -12,8 +9,11 @@ public class Subject {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "userId")
+    private User user;
+
     private String name;
-    private Integer teacherId;
     private Date dateDeleted;
 
     public Subject() {
@@ -35,14 +35,6 @@ public class Subject {
         this.name = name;
     }
 
-    public Integer getTeacherId() {
-        return teacherId;
-    }
-
-    public void setTeacherId(Integer teacherId) {
-        this.teacherId = teacherId;
-    }
-
     public Date getDateDeleted() {
         return dateDeleted;
     }
@@ -56,7 +48,6 @@ public class Subject {
         return "Subject{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", teacherId=" + teacherId +
                 ", dateDeleted=" + dateDeleted +
                 '}';
     }

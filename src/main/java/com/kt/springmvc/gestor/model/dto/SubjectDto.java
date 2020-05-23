@@ -6,7 +6,7 @@ public class SubjectDto {
 
     private Long id;
     private String name;
-    private Integer teacherId;
+    private Long userId;
     private Date dateDeleted;
 
     public Long getId() {
@@ -25,12 +25,12 @@ public class SubjectDto {
         this.name = name;
     }
 
-    public Integer getTeacherId() {
-        return teacherId;
+    public Long getUserId() {
+        return userId;
     }
 
-    public void setTeacherId(Integer teacherId) {
-        this.teacherId = teacherId;
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
     public Date getDateDeleted() {
@@ -40,5 +40,4 @@ public class SubjectDto {
     public void setDateDeleted(Date dateDeleted) {
         this.dateDeleted = dateDeleted;
     }
-
 }
