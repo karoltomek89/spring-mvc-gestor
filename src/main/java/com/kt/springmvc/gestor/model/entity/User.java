@@ -18,6 +18,9 @@ public class User {
     @OneToMany(mappedBy = "user")
     private Set<Subject> subjects;
 
+    @OneToMany(mappedBy = "user")
+    private Set<Grup> grups;
+
     private String name;
     private String surname;
     private String email;

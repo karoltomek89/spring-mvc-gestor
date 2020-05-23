@@ -43,7 +43,10 @@ public class SubjectService {
                 .stream()
                 .map(s -> modelMapper.map(s, SubjectDto.class))
                 .collect(Collectors.toList());
-        subjectDtoList.stream().forEach((sub) -> sub.setUserSurname(userRepository.findById(sub.getUserId()).get().getName()));
+        subjectDtoList.stream().forEach((sub) -> {
+            sub.setUserName(userRepository.findById(sub.getUserId()).get().getName());
+            sub.setUserSurname(userRepository.findById(sub.getUserId()).get().getSurname());
+        });
         return subjectDtoList;
     }
 

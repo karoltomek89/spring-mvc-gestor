@@ -2,6 +2,8 @@ package com.kt.springmvc.gestor.model.entity;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Subject {
@@ -12,6 +14,10 @@ public class Subject {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "userId")
     private User user;
+
+    @ManyToMany(mappedBy = "subjects")
+
+    private Set<Grup> grups = new HashSet();
 
     private String name;
     private Date dateDeleted;
@@ -33,6 +39,14 @@ public class Subject {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public Set<Grup> getGrups() {
+        return grups;
+    }
+
+    public void setGrups(Set<Grup> grups) {
+        this.grups = grups;
     }
 
     public String getName() {

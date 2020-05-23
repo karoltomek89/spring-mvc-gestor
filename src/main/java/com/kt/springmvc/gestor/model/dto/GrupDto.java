@@ -1,13 +1,61 @@
 package com.kt.springmvc.gestor.model.dto;
 
+import com.kt.springmvc.gestor.model.entity.Subject;
+
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 public class GrupDto {
 
     private Long id;
     private String name;
-    private Integer teachertId;
     private Date dateDeleted;
+    private Long userId;
+    private String userName;
+    private String userSurname;
+    private Set<SubjectDto> subjects;
+    private Long tempSubjectId;
+
+    public Long getTempSubjectId() {
+        return tempSubjectId;
+    }
+
+    public void setTempSubjectId(Long tempSubjectId) {
+        this.tempSubjectId = tempSubjectId;
+    }
+
+    public Set<SubjectDto> getSubjects() {
+        return subjects;
+    }
+
+    public void setSubjects(Set<SubjectDto> subjects) {
+        this.subjects = subjects;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getUserSurname() {
+        return userSurname;
+    }
+
+    public void setUserSurname(String userSurname) {
+        this.userSurname = userSurname;
+    }
 
     public Long getId() {
         return id;
@@ -23,14 +71,6 @@ public class GrupDto {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Integer getTeachertId() {
-        return teachertId;
-    }
-
-    public void setTeachertId(Integer teachertId) {
-        this.teachertId = teachertId;
     }
 
     public Date getDateDeleted() {

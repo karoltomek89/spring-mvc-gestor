@@ -1,8 +1,10 @@
 package com.kt.springmvc.gestor.controller;
 
+import com.kt.springmvc.gestor.model.dto.GrupDto;
 import com.kt.springmvc.gestor.model.dto.SubjectDto;
 import com.kt.springmvc.gestor.model.dto.UserDto;
 import com.kt.springmvc.gestor.model.entity.User;
+import com.kt.springmvc.gestor.service.GrupService;
 import com.kt.springmvc.gestor.service.SubjectService;
 import com.kt.springmvc.gestor.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +27,9 @@ public class DirectorController {
 
     @Autowired
     private SubjectService subjectService;
+
+    @Autowired
+    private GrupService grupService;
 
     @GetMapping("/director")
     public String indexView() {
@@ -64,4 +69,27 @@ public class DirectorController {
         return "redirect:/subjects";
     }
 
+    @GetMapping("/grups")
+    public ModelAndView getAllGrupsWithTeachers() {
+        List<UserDto> teachersList = userService.getTeachers();
+        List<SubjectDto> subjectsList = subjectService.getAllSubjects();
+        List<GrupDto> grupsList = grupService.getAllGrups();
+        ModelAndView modelAndView = new ModelAndView("grups");
+        modelAndView.addObject("grupToInsert", new GrupDto());
+        modelAndView.addObject("teachersList", teachersList);
+        modelAndView.addObject("subjectsList", subjectsList);
+        modelAndView.addObject("grupsList", grupsList);
+        return modelAndView;
+    }
+
+    @PostMapping("/grups")
+    public String registerGrup(@RequestParam("action") String action, @ModelAttribute GrupDto grupDto, @ModelAttribute SubjectDto subjectDto) {
+        if ("addgrup".equals(action)) {
+            grupService.registerGrup(grupDto, subjectDto);
+        }
+        if ("addsubjecttogrup".equals(action)) {
+            grupService.addSubjectToGrup(subjectDto, grupDto);
+        }
+        return "redirect:/grups";
+    }
 }

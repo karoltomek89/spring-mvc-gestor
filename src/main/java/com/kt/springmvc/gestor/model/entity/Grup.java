@@ -1,21 +1,48 @@
 package com.kt.springmvc.gestor.model.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Grup {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "userId")
+    private User user;
+
+    @ManyToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    @JoinTable(
+            name = "grups_has_subjects",
+            joinColumns = @JoinColumn(name = "grupId"),
+            inverseJoinColumns = @JoinColumn(name = "subjectId"))
+    private Set<Subject> subjects = new HashSet();
+
+
     private String name;
-    private Integer teacherId;
     private Date dateDeleted;
 
     public Grup() {
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Set<Subject> getSubjects() {
+        return subjects;
+    }
+
+    public void setSubjects(Set<Subject> subjects) {
+        this.subjects = subjects;
     }
 
     public Long getId() {
@@ -34,14 +61,6 @@ public class Grup {
         this.name = name;
     }
 
-    public Integer getTeacherId() {
-        return teacherId;
-    }
-
-    public void setTeacherId(Integer teacherId) {
-        this.teacherId = teacherId;
-    }
-
     public Date getDateDeleted() {
         return dateDeleted;
     }
@@ -55,7 +74,6 @@ public class Grup {
         return "Grup{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", teacherId=" + teacherId +
                 ", dateDeleted=" + dateDeleted +
                 '}';
     }
