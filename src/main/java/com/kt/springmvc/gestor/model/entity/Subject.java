@@ -27,6 +27,14 @@ public class Subject {
         this.id = id;
     }
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     public String getName() {
         return name;
     }
@@ -47,6 +55,7 @@ public class Subject {
     public String toString() {
         return "Subject{" +
                 "id=" + id +
+                ", user=" + user +
                 ", name='" + name + '\'' +
                 ", dateDeleted=" + dateDeleted +
                 '}';

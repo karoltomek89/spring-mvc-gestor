@@ -1,12 +1,14 @@
 package com.kt.springmvc.gestor.model.dto;
 
+import com.kt.springmvc.gestor.model.entity.User;
+
 import java.util.Date;
 
 public class SubjectDto {
 
     private Long id;
     private String name;
-    private Long userId;
+    private User user;
     private Date dateDeleted;
 
     public Long getId() {
@@ -25,12 +27,12 @@ public class SubjectDto {
         this.name = name;
     }
 
-    public Long getUserId() {
-        return userId;
+    public User getUser() {
+        return user;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public Date getDateDeleted() {
