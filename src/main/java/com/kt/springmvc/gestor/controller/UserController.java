@@ -22,6 +22,7 @@ public class UserController {
 
     @PostMapping("/registeruser")
     public String registerUser(@ModelAttribute UserDto userDto) {
+        System.out.println('\n' + "Dodaję: " + userDto + '\n');
         userService.registerUser(userDto);
         return "redirect:/index";
     }

@@ -64,8 +64,13 @@ public class DirectorController {
     }
 
     @PostMapping("/subjects")
-    public String registerSubject(@ModelAttribute SubjectDto subjectDto) {
-        subjectService.registerSubject(subjectDto);
+    public String registerSubject(@RequestParam("action") String action, @ModelAttribute SubjectDto subjectDto) {
+        if ("add".equals(action)) {
+            subjectService.registerSubject(subjectDto);
+        }
+        if ("delete".equals(action)) {
+            subjectService.deleteSubject(subjectDto.getId());
+        }
         return "redirect:/subjects";
     }
 
@@ -89,6 +94,9 @@ public class DirectorController {
         }
         if ("addsubjecttogrup".equals(action)) {
             grupService.addSubjectToGrup(subjectDto, grupDto);
+        }
+        if ("deletesubjectfromgrup".equals(action)) {
+            grupService.removeSubjectFromGrup(subjectDto, grupDto);
         }
         return "redirect:/grups";
     }

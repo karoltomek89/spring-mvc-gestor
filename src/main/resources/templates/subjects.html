@@ -90,14 +90,24 @@
                                 <th scope="col">Nazwa przedmiotu</th>
                                 <th scope="col">Imię nauczyciela</th>
                                 <th scope="col">Nazwisko nauczyciela</th>
+                                <th scope="col">Data usunięcia</th>
+                                <th scope="col">Usuwanie przedmiotu</th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr th:each="subject : ${subjectsList}">
-                                <td th:text="${subject.id}"></td>
-                                <td th:text="${subject.name}"></td>
-                                <td th:text="${subject.userName}"></td>
-                                <td th:text="${subject.userSurname}"></td>
+                                <form action="/subjects" method="post" th:object="${subjectToInsert}">
+                                    <input name="id" th:value="${subject.id}" type="hidden">
+                                    <td th:text="${subject.id}"></td>
+                                    <td th:text="${subject.name}"></td>
+                                    <td th:text="${subject.userName}"></td>
+                                    <td th:text="${subject.userSurname}"></td>
+                                    <td th:text="${subject.dateDeleted}"></td>
+                                    <td>
+                                        <button class="btn btn-danger" name="action" type=submit value="delete">Usuń
+                                        </button>
+                                    </td>
+                                </form>
                             </tr>
                             </tbody>
                         </table>
@@ -132,7 +142,9 @@
                             </div>
 
                         </form>
-                        <button class="btn btn-primary" form="addSubject" type="submit">Dodaj przedmiot</button>
+                        <button class="btn btn-primary" form="addSubject" name="action" type=submit value="add">Dodaj
+                            przedmiot
+                        </button>
                     </div>
                 </div>
             </div>

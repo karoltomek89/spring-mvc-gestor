@@ -77,4 +77,17 @@ public class UserDto {
         this.active = active;
     }
 
+    @Override
+    public String toString() {
+        return "UserDto{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", dateDeleted=" + dateDeleted +
+                ", role='" + role + '\'' +
+                ", active=" + active +
+                '}';
+    }
 }

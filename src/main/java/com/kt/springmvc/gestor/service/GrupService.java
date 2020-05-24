@@ -48,7 +48,7 @@ public class GrupService {
     }
 
     public void removeSubjectFromGrup(SubjectDto subjectDto, GrupDto grupDto) {
-        Subject subject = modelMapper.map(subjectDto, Subject.class);
+        Subject subject = subjectRepository.findById(subjectDto.getId()).get();
         Grup grup = grupRepository.findById(grupDto.getId()).get();
         grup.getSubjects().remove(subject);
         grup = grupRepository.save(grup);
