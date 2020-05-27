@@ -91,15 +91,26 @@
                                 <th scope="col">Imię wychowawcy</th>
                                 <th scope="col">Nazwisko wychowawcy</th>
                                 <th scope="col">Przedmioty</th>
+                                <th scope="col">Data usunięcia</th>
+                                <th scope="col">Usuwanie</th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr th:each="grup : ${grupsList}">
-                                <td th:text="${grup.id}"></td>
-                                <td th:text="${grup.name}"></td>
-                                <td th:text="${grup.userName}"></td>
-                                <td th:text="${grup.userSurname}"></td>
-                                <td><span th:each="subject : ${grup.subjects}" th:text="${subject.name} "></span></td>
+                                <form action="/grups" method="post" th:object="${grupToInsert}">
+                                    <input name="id" th:value="${grup.id}" type="hidden">
+                                    <td th:text="${grup.id}"></td>
+                                    <td th:text="${grup.name}"></td>
+                                    <td th:text="${grup.userName}"></td>
+                                    <td th:text="${grup.userSurname}"></td>
+                                    <td><span th:each="subject : ${grup.subjects}" th:text="${subject.name} "></span>
+                                    </td>
+                                    <td th:text="${grup.dateDeleted}"></td>
+                                    <td>
+                                        <button class="btn btn-danger" name="action" type=submit value="deletegrup">Usuń
+                                        </button>
+                                    </td>
+                                </form>
                             </tr>
                             </tbody>
                         </table>

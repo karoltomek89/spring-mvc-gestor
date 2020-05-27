@@ -98,6 +98,9 @@ public class DirectorController {
         if ("deletesubjectfromgrup".equals(action)) {
             grupService.removeSubjectFromGrup(subjectDto, grupDto);
         }
+        if ("deletegrup".equals(action)) {
+            grupService.deleteGrup(grupDto.getId());
+        }
         return "redirect:/grups";
     }
 }

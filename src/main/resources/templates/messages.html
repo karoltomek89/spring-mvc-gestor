@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+
+    <!-- Bootstrap CSS -->
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" rel="stylesheet">
+
+    <title>Gestor - Twój elektroniczny dziennik</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-xl navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">Panel nawigacyjny</a>
+    <button aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation"
+            class="navbar-toggler"
+            data-target="#navbarNavAltMarkup" data-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+                <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown"
+                   href="#"
+                   id="start" role="button">
+                    START
+                </a>
+
+                <div aria-labelledby="start" class="dropdown-menu">
+                    <a class="dropdown-item" href="/login">Logowanie</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/registeruser">Rejestracja</a>
+                </div>
+            </li>
+
+
+        </ul>
+    </div>
+
+
+</nav>
+
+
+<div class="row">
+    <div class="col-1">
+        <div aria-orientation="vertical" class="nav flex-column nav-pills" id="v-pills-tab" role="tablist">
+
+            <a aria-controls="v-pills-info" aria-selected="false" class="nav-link"
+               href="/info" id="v-pills-info-tab" role="tab">Info</a>
+
+            <a aria-controls="v-pills-users" aria-selected="true" class="nav-link active"
+               href="/users" id="v-pills-users-tab" role="tab">Zarządzaj kontami</a>
+
+            <a aria-controls="v-pills-subjects" aria-selected="false" class="nav-link"
+               href="/subjects" id="v-pills-subjects-tab" role="tab">Zarządzaj przedmiotami</a>
+
+            <a aria-controls="v-pills-teachers" aria-selected="false" class="nav-link"
+               href="/teachers" id="v-pills-teachers-tab" role="tab">Zarządzaj nauczycielami</a>
+
+            <a aria-controls="v-pills-students" aria-selected="false" class="nav-link"
+               href="/students" id="v-pills-students-tab" role="tab">Zarządzaj uczniami</a>
+
+            <a aria-controls="v-pills-grups" aria-selected="false" class="nav-link"
+               href="/grups" id="v-pills-grups-tab" role="tab">Zarządzaj klasami</a>
+
+            <a aria-controls="v-pills-messages" aria-selected="false" class="nav-link"
+               href="/messages" id="v-pills-messages-tab" role="tab">Wiadomości</a>
+
+            <a aria-controls="v-pills-logout" aria-selected="false" class="nav-link"
+               href="/logout" id="v-pills-logout-tab" role="tab">Wyloguj</a>
+
+        </div>
+    </div>
+
+    <div class="col-6">
+        <div class="tab-content" id="v-pills-tabMessages">
+            <div aria-labelledby="v-pills-messages-tab" class="tab-pane fade show active" id="v-pills-sendmessage"
+                 role="tabpanel">
+                <br>
+                <h3> Wysyłanie wiadomości</h3>
+                <br>
+                <div class="modal-body">
+                    <form id="sendMessage" method="post" th:action="@{/messages}"
+                          th:object="${messageToInsert}">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label>Adresat</label>
+                                <select class="custom-select" th:field="*{receiver}">
+                                    <option th:each="user : ${allUsers}"
+                                            th:text="${user.name} + ' ' + ${ user.surname}"
+                                            th:value="${user.email}">
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label>Temat</label>
+                                <input class="form-control" th:field="*{topic}">
+                            </div>
+                        </div>
+
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label>Tekst</label>
+                                <textarea class="form-control" placeholder="Wpisz tekst wiadomości" rows="6"
+                                          th:field="*{text}"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer  col-md-6">
+                    <button class="btn btn-secondary" data-dismiss="modal" type="button">Anuluj</button>
+                    <button class="btn btn-primary" form="sendMessage" name="action" type=submit value="send">Wyślij
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-1">
+    </div>
+
+    <div class="col-6">
+        <div class="tab-content" id="v-pills-receivedmessages">
+            <div aria-labelledby="v-pills-received-messages-tab" class="tab-pane fade show active"
+                 id="v-pills-received-messages"
+                 role="tabpanel">
+                <br>
+                <h3>Wiadomości odebrane</h3>
+                <br>
+                <div th:each="receivedmessage : ${receivedMessages}">
+                    <FORM id="deleteReceivedMessage" method="post" th:action="@{/messages}"
+                          th:object="${sendedMessageToDelete}">
+
+                        <INPUT TYPE="hidden" name="id" th:value="${receivedmessage.id}">
+                        <button class="btn btn-primary" th:text="Nadawca + ':' + ' ' + ${receivedmessage.sender}"
+                                type="button">
+
+                        </button>
+
+                        <button class="btn btn-primary" th:text="Temat + ':' + ' ' + ${receivedmessage.topic}"
+                                type="button">
+
+                        </button>
+
+                        <button aria-controls="collapse" aria-expanded="false" class="btn btn-primary"
+                                data-toggle="collapse" th:attr="data-target='#collapse'+${receivedmessage.id}"
+                                type="button">
+                            Pokaż wiadomość
+                        </button>
+
+                        </p>
+                        <div class="collapse" th:attr="id='collapse'+${receivedmessage.id}">
+                            <div class="card card-body" th:text="${receivedmessage.text}">
+                            </div>
+
+
+                            <button class="btn btn-primary" form="deleteReceivedMessage" name="action" type=submit
+                                    value="deleteReceived">Usuń wiadomość
+                            </button>
+                        </div>
+
+                        </p>
+                    </FORM>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-1">
+    </div>
+
+    <div class="col-6">
+        <div class="tab-content" id="v-pills-sendedmessages">
+            <div aria-labelledby="v-pills-sended-messages-tab" class="tab-pane fade show active"
+                 id="v-pills-sended-messages"
+                 role="tabpanel">
+                <br>
+                <h3>Wiadomości wysłane</h3>
+                <br>
+
+                <div th:each="sendeddmessage : ${sendedMessages}">
+
+                    <FORM id="deleteSendedMessage" method="post" th:action="@{/messages}"
+                          th:object="${sendedMessageToDelete}">
+
+                        <INPUT TYPE="hidden" name="id" th:value="${sendeddmessage.id}">
+
+                        <button class="btn btn-primary" th:text="Odbiorca + ':' + ' ' + ${sendeddmessage.receiver}"
+                                type="button">
+                        </button>
+
+                        <button class="btn btn-primary" th:text="Temat + ':' + ' ' + ${sendeddmessage.topic}"
+                                type="button">
+                        </button>
+
+                        <button aria-controls="collapse" aria-expanded="false" class="btn btn-primary"
+                                data-toggle="collapse" th:attr="data-target='#collapse'+${sendeddmessage.id}"
+                                type="button">
+                            Pokaż wiadomość
+                        </button>
+
+                        </p>
+                        <div class="collapse" th:attr="id='collapse'+${sendeddmessage.id}">
+                            <div class="card card-body" th:text="${sendeddmessage.text}">
+                            </div>
+
+                            <button class="btn btn-primary" form="deleteSendedMessage" name="action" type=submit
+                                    value="deleteSended">
+                                Usuń wiadomość
+                            </button>
+                        </div>
+                        </p>
+                        <br>
+                    </FORM>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script crossorigin="anonymous" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>

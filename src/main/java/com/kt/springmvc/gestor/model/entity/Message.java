@@ -14,8 +14,35 @@ public class Message {
     private String sender;
     private String receiver;
     private String text;
+    private Date dateDeletedSender;
+    private Date dateDeletedReceiver;
+    private String topic;
 
     public Message() {
+    }
+
+    public String getTopic() {
+        return topic;
+    }
+
+    public void setTopic(String topic) {
+        this.topic = topic;
+    }
+
+    public Date getDateDeletedSender() {
+        return dateDeletedSender;
+    }
+
+    public void setDateDeletedSender(Date dateDeletedSender) {
+        this.dateDeletedSender = dateDeletedSender;
+    }
+
+    public Date getDateDeletedReceiver() {
+        return dateDeletedReceiver;
+    }
+
+    public void setDateDeletedReceiver(Date dateDeletedReceiver) {
+        this.dateDeletedReceiver = dateDeletedReceiver;
     }
 
     public Long getId() {
