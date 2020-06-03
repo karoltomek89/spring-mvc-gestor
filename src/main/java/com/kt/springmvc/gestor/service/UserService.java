@@ -43,7 +43,14 @@ public class UserService {
     }
 
     public List<UserDto> getTeachers() {
-        return userRepository.findByRole("ROLE_TEACHER")
+        return userRepository.findByRoleOrderByRole("ROLE_TEACHER")
+                .stream()
+                .map(u -> modelMapper.map(u, UserDto.class))
+                .collect(Collectors.toList());
+    }
+
+    public List<UserDto> getStudents() {
+        return userRepository.findByRoleOrderByRole("ROLE_STUDENT")
                 .stream()
                 .map(u -> modelMapper.map(u, UserDto.class))
                 .collect(Collectors.toList());

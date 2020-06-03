@@ -21,6 +21,9 @@ public class User {
     @OneToMany(mappedBy = "user")
     private Set<Grup> grups;
 
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Grup grup;
+
     private String name;
     private String surname;
     private String email;
@@ -94,6 +97,38 @@ public class User {
 
     public void setActive(boolean active) {
         this.active = active;
+    }
+
+    public Set<Grade> getGrades() {
+        return grades;
+    }
+
+    public void setGrades(Set<Grade> grades) {
+        this.grades = grades;
+    }
+
+    public Set<Subject> getSubjects() {
+        return subjects;
+    }
+
+    public void setSubjects(Set<Subject> subjects) {
+        this.subjects = subjects;
+    }
+
+    public Set<Grup> getGrups() {
+        return grups;
+    }
+
+    public void setGrups(Set<Grup> grups) {
+        this.grups = grups;
+    }
+
+    public Grup getGrup() {
+        return grup;
+    }
+
+    public void setGrup(Grup grup) {
+        this.grup = grup;
     }
 
     @Override

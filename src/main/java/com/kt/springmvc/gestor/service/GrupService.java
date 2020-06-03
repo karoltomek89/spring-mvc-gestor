@@ -2,6 +2,7 @@ package com.kt.springmvc.gestor.service;
 
 import com.kt.springmvc.gestor.model.dto.GrupDto;
 import com.kt.springmvc.gestor.model.dto.SubjectDto;
+import com.kt.springmvc.gestor.model.dto.UserDto;
 import com.kt.springmvc.gestor.model.entity.Grup;
 import com.kt.springmvc.gestor.model.entity.Subject;
 import com.kt.springmvc.gestor.model.entity.User;
@@ -10,6 +11,7 @@ import com.kt.springmvc.gestor.repository.GrupRepository;
 import com.kt.springmvc.gestor.repository.SubjectRepository;
 import com.kt.springmvc.gestor.repository.UserRepository;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.stereotype.Service;
 
 import java.sql.Date;
@@ -33,14 +35,15 @@ public class GrupService {
         this.grupRepository = grupRepository;
     }
 
-    public void registerGrup(GrupDto grupDto, SubjectDto subjectDto) {
+    public void registerGrup(GrupDto grupDto) {
+        modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
         User user = userRepository.findById(grupDto.getUserId()).get();
         Grup grup = modelMapper.map(grupDto, Grup.class);
         grup.setUser(user);
         grup = grupRepository.save(grup);
     }
 
-    public void addSubjectToGrup(SubjectDto subjectDto, GrupDto grupDto) {
+    public void addSubjectToGrup(GrupDto grupDto) {
         Subject subject = subjectRepository.findById(grupDto.getTempSubjectId()).get();
         Grup grup = grupRepository.findById(grupDto.getId()).get();
         grup.getSubjects().add(subject);
@@ -54,7 +57,24 @@ public class GrupService {
         grup = grupRepository.save(grup);
     }
 
+    public void addStudentToGrup(GrupDto grupDto) {
+        User user = userRepository.findById(grupDto.getTempStudentId()).get();
+        Grup grup = grupRepository.findById(grupDto.getId()).get();
+        grup.getStudents().add(user);
+        grup = grupRepository.save(grup);
+    }
+
+    public void removeStudentFromGrup(GrupDto grupDto) {
+        User user = userRepository.findById(grupDto.getUserId()).get();
+        Grup grup = grupRepository.findById(grupDto.getId()).get();
+        grup.getStudents().remove(user);
+        grup = grupRepository.save(grup);
+    }
+
     public List<GrupDto> getAllGrups() {
+        modelMapper.typeMap(Grup.class, GrupDto.class)
+                .addMappings(m -> m.map(src -> src.getUser().getId(), GrupDto::setUserId))
+                .addMappings(m -> m.map(src -> src.getStudents(), GrupDto::setStudents));
         List<GrupDto> grupDtoList = grupRepository.findAll()
                 .stream()
                 .map(s -> modelMapper.map(s, GrupDto.class))

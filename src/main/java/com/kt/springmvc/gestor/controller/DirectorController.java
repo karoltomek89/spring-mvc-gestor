@@ -90,10 +90,10 @@ public class DirectorController {
     @PostMapping("/grups")
     public String registerGrup(@RequestParam("action") String action, @ModelAttribute GrupDto grupDto, @ModelAttribute SubjectDto subjectDto) {
         if ("addgrup".equals(action)) {
-            grupService.registerGrup(grupDto, subjectDto);
+            grupService.registerGrup(grupDto);
         }
         if ("addsubjecttogrup".equals(action)) {
-            grupService.addSubjectToGrup(subjectDto, grupDto);
+            grupService.addSubjectToGrup(grupDto);
         }
         if ("deletesubjectfromgrup".equals(action)) {
             grupService.removeSubjectFromGrup(subjectDto, grupDto);
@@ -103,4 +103,27 @@ public class DirectorController {
         }
         return "redirect:/grups";
     }
+
+    @GetMapping("/students")
+    public ModelAndView getAllStudentsWithGrups() {
+        List<UserDto> studentsList = userService.getStudents();
+        List<GrupDto> grupsList = grupService.getAllGrups();
+        ModelAndView modelAndView = new ModelAndView("students");
+        modelAndView.addObject("grupToInsert", new GrupDto());
+        modelAndView.addObject("grupsList", grupsList);
+        modelAndView.addObject("studentsList", studentsList);
+        return modelAndView;
+    }
+
+    @PostMapping("/students")
+    public String registerStudent(@RequestParam("action") String action, @ModelAttribute GrupDto grupDto) {
+        if ("add".equals(action)) {
+            grupService.addStudentToGrup(grupDto);
+        }
+        if ("delete".equals(action)) {
+            grupService.removeStudentFromGrup(grupDto);
+        }
+        return "redirect:/students";
+    }
+
 }

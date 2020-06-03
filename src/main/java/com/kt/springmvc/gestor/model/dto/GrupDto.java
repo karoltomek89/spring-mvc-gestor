@@ -1,6 +1,7 @@
 package com.kt.springmvc.gestor.model.dto;
 
 import com.kt.springmvc.gestor.model.entity.Subject;
+import com.kt.springmvc.gestor.model.entity.User;
 
 import java.util.Date;
 import java.util.HashSet;
@@ -16,6 +17,9 @@ public class GrupDto {
     private String userSurname;
     private Set<SubjectDto> subjects;
     private Long tempSubjectId;
+    private Set<User> students;
+    private Long tempStudentId;
+
 
     public Long getTempSubjectId() {
         return tempSubjectId;
@@ -81,4 +85,19 @@ public class GrupDto {
         this.dateDeleted = dateDeleted;
     }
 
+    public Set<User> getStudents() {
+        return students;
+    }
+
+    public void setStudents(Set<User> students) {
+        this.students = students;
+    }
+
+    public Long getTempStudentId() {
+        return tempStudentId;
+    }
+
+    public void setTempStudentId(Long tempStudentId) {
+        this.tempStudentId = tempStudentId;
+    }
 }

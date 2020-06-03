@@ -22,6 +22,8 @@ public class Grup {
             inverseJoinColumns = @JoinColumn(name = "subjectId"))
     private Set<Subject> subjects = new HashSet();
 
+    @OneToMany(mappedBy = "grup")
+    private Set<User> students = new HashSet();
 
     private String name;
     private Date dateDeleted;
@@ -67,6 +69,22 @@ public class Grup {
 
     public void setDateDeleted(Date dateDeleted) {
         this.dateDeleted = dateDeleted;
+    }
+
+    public Set<User> getStudents() {
+        return students;
+    }
+
+    public void setStudents(Set<User> students) {
+        this.students = students;
+    }
+
+    public void addStudentToGrup(User student) {
+        students.add(student);
+    }
+
+    public void deleteStudentFromGrup(User student) {
+        students.remove(student);
     }
 
     @Override
