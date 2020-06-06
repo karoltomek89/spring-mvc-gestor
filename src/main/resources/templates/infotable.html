@@ -1,0 +1,28 @@
+<div class="col-10" th:fragment="infotable">
+    <div class="tab-content" id="v-pills-tabContent">
+        <div aria-labelledby="v-pills-users-tab" class="tab-pane fade show active" id="v-pills-grades"
+             role="tabpanel">
+            <br>
+            <h3> Informacje o koncie</h3>
+            <br>
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th scope="col">Imię</th>
+                    <th scope="col">Nazwisko</th>
+                    <th scope="col">e-mail</th>
+                    <th scope="col">Typ konta</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td th:text="${user.name}"></td>
+                    <td th:text="${user.surname}"></td>
+                    <td th:text="${user.email}"></td>
+                    <td th:text="${user.role}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

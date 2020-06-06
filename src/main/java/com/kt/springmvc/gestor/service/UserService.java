@@ -32,7 +32,7 @@ public class UserService {
         User user = modelMapper.map(userDto, User.class);
         user.setPassword(passwordEncoder.encode((user.getPassword())));
         user = userRepository.save(user);
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
     }
 
     public List<UserDto> getAllUsers() {
@@ -56,6 +56,13 @@ public class UserService {
                 .collect(Collectors.toList());
     }
 
+    public List<UserDto> getParents() {
+        return userRepository.findByRoleOrderByRole("ROLE_PARENT")
+                .stream()
+                .map(u -> modelMapper.map(u, UserDto.class))
+                .collect(Collectors.toList());
+    }
+
     public void activateUser(Long id) {
         User user = userRepository.findById(id).get();
         user.setActive(true);
@@ -73,6 +80,22 @@ public class UserService {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         User user = userRepository.findByNameOrderByName(authentication.getName());
         return modelMapper.map(user, UserDto.class);
+    }
+
+    public void addParent(UserDto userDto) {
+        User student = userRepository.findById(userDto.getId()).get();
+        User parent = userRepository.findById(userDto.getTempParentId()).get();
+        student.getParents().add(parent);
+        student = userRepository.save(student);
+
+    }
+
+    public void deleteParent(UserDto userDto) {
+        User student = userRepository.findById(userDto.getId()).get();
+        User parent = userRepository.findById(userDto.getTempParentId()).get();
+        student.getParents().remove(parent);
+        student = userRepository.save(student);
+
     }
 
 }

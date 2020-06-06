@@ -1,6 +1,9 @@
 package com.kt.springmvc.gestor.model.dto;
 
+import com.kt.springmvc.gestor.model.entity.User;
+
 import java.util.Date;
+import java.util.Set;
 
 public class UserDto {
 
@@ -12,6 +15,9 @@ public class UserDto {
     private Date dateDeleted;
     private String role;
     private boolean active;
+    private Set<User> parents;
+    private Set<User> students;
+    private Long tempParentId;
 
     public Long getId() {
         return id;
@@ -75,6 +81,30 @@ public class UserDto {
 
     public void setActive(boolean active) {
         this.active = active;
+    }
+
+    public Long getTempParentId() {
+        return tempParentId;
+    }
+
+    public void setTempParentId(Long tempParentId) {
+        this.tempParentId = tempParentId;
+    }
+
+    public Set<User> getParents() {
+        return parents;
+    }
+
+    public void setParents(Set<User> parents) {
+        this.parents = parents;
+    }
+
+    public Set<User> getStudents() {
+        return students;
+    }
+
+    public void setStudents(Set<User> students) {
+        this.students = students;
     }
 
     @Override

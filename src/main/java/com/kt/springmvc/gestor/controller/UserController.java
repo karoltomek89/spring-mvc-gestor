@@ -1,6 +1,5 @@
 package com.kt.springmvc.gestor.controller;
 
-import com.kt.springmvc.gestor.model.dto.SubjectDto;
 import com.kt.springmvc.gestor.model.dto.UserDto;
 import com.kt.springmvc.gestor.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,15 +22,9 @@ public class UserController {
 
     @PostMapping("/registeruser")
     public String registerUser(@ModelAttribute UserDto userDto) {
-        System.out.println('\n' + "Dodaję: " + userDto + '\n');
         userService.registerUser(userDto);
         return "redirect:/index";
     }
 
-    @GetMapping("/info")
-    public ModelAndView infoView() {
-        ModelAndView modelAndView = new ModelAndView("info");
-        modelAndView.addObject("user", userService.getLoggedUser());
-        return modelAndView;
-    }
+
 }

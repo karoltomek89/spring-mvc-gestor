@@ -11,6 +11,4 @@ public interface UserRepository extends JpaRepository<User, Long> {
     List<User> findByRoleOrderByRole(String role);
 
     User findByNameOrderByName(String name);
-
-    User findByGrupsOrderByGrups(String name);
 }

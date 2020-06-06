@@ -123,4 +123,11 @@ public class DirectorController {
         return "redirect:/director/students";
     }
 
+    @GetMapping("/director/info")
+    public ModelAndView infoView() {
+        ModelAndView modelAndView = new ModelAndView("directorinfo");
+        modelAndView.addObject("user", userService.getLoggedUser());
+        return modelAndView;
+    }
+
 }

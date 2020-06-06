@@ -13,7 +13,7 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-xl navbar-dark bg-primary">
-    <a class="navbar-brand" href="#">Panel nawigacyjny</a>
+    <a class="navbar-brand" href="#">Panel nauczyciela</a>
     <button aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation"
             class="navbar-toggler"
             data-target="#navbarNavAltMarkup" data-toggle="collapse" type="button">
@@ -48,19 +48,13 @@
         <div aria-orientation="vertical" class="nav flex-column nav-pills" id="v-pills-tab" role="tablist">
 
             <a aria-controls="v-pills-info" aria-selected="true" class="nav-link active"
-               href="/info" id="v-pills-info-tab" role="tab">Info</a>
+               href="/teacher/info" id="v-pills-info-tab" role="tab">Info</a>
 
-            <a aria-controls="v-pills-users" aria-selected="false" class="nav-link"
-               href="/director/users" id="v-pills-users-tab" role="tab">Zarządzaj kontami</a>
+            <a aria-controls="v-pills-parents" aria-selected="false" class="nav-link"
+               href="/teacher/parents" id="v-pills-parents-tab" role="tab">Zarządzaj rodzicami</a>
 
-            <a aria-controls="v-pills-subjects" aria-selected="false" class="nav-link"
-               href="/director/subjects" id="v-pills-subjects-tab" role="tab">Zarządzaj przedmiotami</a>
-
-            <a aria-controls="v-pills-students" aria-selected="false" class="nav-link"
-               href="/director/students" id="v-pills-students-tab" role="tab">Zarządzaj uczniami</a>
-
-            <a aria-controls="v-pills-grups" aria-selected="false" class="nav-link"
-               href="/director/grups" id="v-pills-grups-tab" role="tab">Zarządzaj klasami</a>
+            <a aria-controls="v-pills-grades" aria-selected="false" class="nav-link"
+               href="/subjects" id="v-pills-grades-tab" role="tab">Zarządzaj ocenami</a>
 
             <a aria-controls="v-pills-messages" aria-selected="false" class="nav-link"
                href="/messages" id="v-pills-messages-tab" role="tab">Wiadomości</a>
@@ -70,33 +64,8 @@
 
         </div>
     </div>
-    <div class="col-10">
-        <div class="tab-content" id="v-pills-tabContent">
-            <div aria-labelledby="v-pills-users-tab" class="tab-pane fade show active" id="v-pills-grades"
-                 role="tabpanel">
-                <br>
-                <h3> Informacje o koncie</h3>
-                <br>
-                <table class="table table-bordered">
-                    <thead>
-                    <tr>
-                        <th scope="col">Imię</th>
-                        <th scope="col">Nazwisko</th>
-                        <th scope="col">e-mail</th>
-                        <th scope="col">Typ konta</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td th:text="${user.name}"></td>
-                        <td th:text="${user.surname}"></td>
-                        <td th:text="${user.email}"></td>
-                        <td th:text="${user.role}"></td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+    <div class="col-10" th:include="infotable">
+
     </div>
 </div>
 

@@ -7,16 +7,18 @@ import com.kt.springmvc.gestor.model.entity.Grup;
 import com.kt.springmvc.gestor.model.entity.Subject;
 import com.kt.springmvc.gestor.model.entity.User;
 import com.kt.springmvc.gestor.repository.GrupRepository;
-import com.kt.springmvc.gestor.repository.GrupRepository;
 import com.kt.springmvc.gestor.repository.SubjectRepository;
 import com.kt.springmvc.gestor.repository.UserRepository;
 import org.modelmapper.ModelMapper;
-import org.modelmapper.convention.MatchingStrategies;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import java.sql.Date;
 import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 
@@ -87,6 +89,28 @@ public class GrupService {
         Grup grup = grupRepository.findById(id).get();
         grup.setDateDeleted(date);
         grupRepository.save(grup);
+    }
+
+    public List<GrupDto> getAllGrupsOfTeacher() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        User user = userRepository.findByNameOrderByName(authentication.getName());
+        List<GrupDto> grupDtoList = grupRepository.findByUserId(user.getId())
+                .stream()
+                .map(s -> modelMapper.map(s, GrupDto.class))
+                .collect(Collectors.toList());
+        return grupDtoList;
+    }
+
+    public List<UserDto> getAllStudentsOfTeacher() {
+        Set<User> users = new HashSet<>();
+        for (GrupDto grup : getAllGrupsOfTeacher()
+        ) {
+            users.addAll(grup.getStudents());
+        }
+        List<UserDto> allStudents = users.stream()
+                .map(s -> modelMapper.map(s, UserDto.class))
+                .collect(Collectors.toList());
+        return allStudents;
     }
 
 }

@@ -2,6 +2,7 @@ package com.kt.springmvc.gestor.model.entity;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 
@@ -24,6 +25,20 @@ public class User {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "studentGrups_grupId")
     private Grup studentGrup;
+
+    @ManyToMany
+    @JoinTable(name = "students_has_parents",
+            joinColumns = @JoinColumn(name = "studentId"),
+            inverseJoinColumns = @JoinColumn(name = "parentId")
+    )
+    private Set<User> parents = new HashSet();
+
+    @ManyToMany
+    @JoinTable(name = "students_has_parents",
+            joinColumns = @JoinColumn(name = "parentId"),
+            inverseJoinColumns = @JoinColumn(name = "studentId")
+    )
+    private Set<User> students = new HashSet();
 
     private String name;
     private String surname;
@@ -132,12 +147,30 @@ public class User {
         this.studentGrup = grup;
     }
 
+    public Set<User> getParents() {
+        return parents;
+    }
+
+    public void setParents(Set<User> parents) {
+        this.parents = parents;
+    }
+
+    public Set<User> getStudents() {
+        return students;
+    }
+
+    public void setStudents(Set<User> students) {
+        this.students = students;
+    }
+
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
                 ", grades=" + grades +
                 ", subjects=" + subjects +
+                ", parents=" + parents +
+                ", students=" + students +
                 ", grups=" + grups +
                 ", studentGrup=" + studentGrup +
                 ", name='" + name + '\'' +
