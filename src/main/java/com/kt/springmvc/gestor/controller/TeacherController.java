@@ -55,7 +55,7 @@ public class TeacherController {
         if ("addparent".equals(action)) {
             userService.addParent(userDto);
         }
-        if ("removeparent".equals(action)) {
+        if ("deleteparent".equals(action)) {
             userService.deleteParent(userDto);
         }
         return "redirect:/teacher/parents";

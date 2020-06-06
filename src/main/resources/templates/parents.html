@@ -93,7 +93,7 @@
                                     <td th:text="${user.name}"></td>
                                     <td th:text="${user.surname}"></td>
                                     <td><span th:each="parent : ${user.parents}"
-                                              th:text="${parent.name} + ' ' + ${parent.surname} "></span>
+                                              th:utext="${parent.name} + ' ' + ${parent.surname} + '<br />' "></span>
                                 </form>
                             </tr>
                             </tbody>
@@ -108,9 +108,9 @@
         <br>
         <div class="row">
             <div class="col-8">
-                <div class="tab-content" id="v-pills-tabContent-addgrup">
-                    <div aria-labelledby="v-pills-addsubject-tab" class="tab-pane fade show active"
-                         id="v-pills-addgrup" role="tabpanel">
+                <div class="tab-content" id="v-pills-tabContent-addparent">
+                    <div aria-labelledby="v-pills-addparent-tab" class="tab-pane fade show active"
+                         id="v-pills-addparent" role="tabpanel">
                         <form id="addParent" method="post" th:action="@{/teacher/parents}" th:object="${userToInsert}">
 
                             <div>
@@ -142,85 +142,45 @@
             </div>
         </div>
 
-        <!--        <br>-->
-        <!--        <h3> Dodawanie przedmiotów do klasy</h3>-->
-        <!--        <br>-->
-        <!--        <div class="row">-->
-        <!--            <div class="col-8">-->
-        <!--                <div class="tab-content" id="v-pills-tabContent-addsubjecttogrup">-->
-        <!--                    <div aria-labelledby="v-pills-addsubject-tab" class="tab-pane fade show active"-->
-        <!--                         id="v-pills-addsubjecttogrup" role="tabpanel">-->
-        <!--                        <form id="addSubjectToGrup" method="post" th:action="@{/director/grups}"-->
-        <!--                              th:object="${grupToInsert}">-->
 
-        <!--                            <div class="form-group">-->
-        <!--                                <label>Wybierz klasę</label>-->
-        <!--                                <select class="custom-select" th:field="*{id}">-->
-        <!--                                    <option th:each="grup : ${grupsList}"-->
-        <!--                                            th:text="${grup.name}"-->
-        <!--                                            th:value="${grup.id}">-->
-        <!--                                    </option>-->
-        <!--                                </select>-->
-        <!--                            </div>-->
+        <br>
+        <h3> Usuwanie rodziców</h3>
+        <br>
+        <div class="row">
+            <div class="col-8">
+                <div class="tab-content" id="v-pills-tabContent-deleteparent">
+                    <div aria-labelledby="v-pills-deleteparent-tab" class="tab-pane fade show active"
+                         id="v-pills-deleteparent" role="tabpanel">
+                        <form id="deleteParent" method="post" th:action="@{/teacher/parents}"
+                              th:object="${userToInsert}">
 
-        <!--                            <div class="form-group">-->
-        <!--                                <label>Wybierz przedmiot</label>-->
-        <!--                                <select class="custom-select" th:field="*{tempSubjectId}">-->
-        <!--                                    <option th:each="subject : ${subjectsList}"-->
-        <!--                                            th:text="${subject.name}"-->
-        <!--                                            th:value="${subject.id}">-->
-        <!--                                    </option>-->
-        <!--                                </select>-->
-        <!--                            </div>-->
+                            <div>
+                                <label>Wybierz ucznia</label>
+                                <select class="custom-select" th:field="*{id}">
+                                    <option th:each="student : ${studentsList}"
+                                            th:text="${student.name} + ${ student.surname}"
+                                            th:value="${student.id}">
+                                    </option>
+                                </select>
+                            </div>
 
-        <!--                        </form>-->
-        <!--                        <button class="btn btn-primary" form="addSubjectToGrup" name="action" type=submit-->
-        <!--                                value="addsubjecttogrup">Dodaj przedmiot-->
-        <!--                        </button>-->
-        <!--                    </div>-->
-        <!--                </div>-->
-        <!--            </div>-->
-        <!--        </div>-->
-
-        <!--        <br>-->
-        <!--        <h3> Usuwanie przedmiotów z klasy</h3>-->
-        <!--        <br>-->
-        <!--        <div class="row">-->
-        <!--            <div class="col-8">-->
-        <!--                <div class="tab-content" id="v-pills-tabContent-deletesubjectfromgrup">-->
-        <!--                    <div aria-labelledby="v-pills-deletesubject-tab" class="tab-pane fade show active"-->
-        <!--                         id="v-pills-deletesubjectfromgrup" role="tabpanel">-->
-        <!--                        <form id="deleteSubjectFromGrup" method="post" th:action="@{/director/grups}"-->
-        <!--                              th:object="${grupToInsert}">-->
-
-        <!--                            <div class="form-group">-->
-        <!--                                <label>Wybierz klasę</label>-->
-        <!--                                <select class="custom-select" th:field="*{id}">-->
-        <!--                                    <option th:each="grup : ${grupsList}"-->
-        <!--                                            th:text="${grup.name}"-->
-        <!--                                            th:value="${grup.id}">-->
-        <!--                                    </option>-->
-        <!--                                </select>-->
-        <!--                            </div>-->
-
-        <!--                            <div class="form-group">-->
-        <!--                                <label>Wybierz przedmiot</label>-->
-        <!--                                <select class="custom-select" th:field="*{tempSubjectId}">-->
-        <!--                                    <option th:each="subject : ${subjectsList}"-->
-        <!--                                            th:text="${subject.name}"-->
-        <!--                                            th:value="${subject.id}">-->
-        <!--                                    </option>-->
-        <!--                                </select>-->
-        <!--                            </div>-->
-
-        <!--                        </form>-->
-        <!--                        <button class="btn btn-primary" form="deleteSubjectFromGrup" name="action" type=submit-->
-        <!--                                value="deletesubjectfromgrup">Usuń przedmiot-->
-        <!--                        </button>-->
-        <!--                    </div>-->
-        <!--                </div>-->
-        <!--            </div>-->
-        <!--        </div>-->
+                            <div class="form-group">
+                                <label>Wybierz rodzica</label>
+                                <select class="custom-select" th:field="*{tempParentId}">
+                                    <option th:each="parent : ${parentsList}"
+                                            th:text="${parent.name} + ${ parent.surname}"
+                                            th:value="${parent.id}">
+                                    </option>
+                                </select>
+                            </div>
+                        </form>
+                        <button class="btn btn-primary" form="deleteParent" name="action" type=submit
+                                value="deleteparent">Usuń rodzica
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
     </div>
