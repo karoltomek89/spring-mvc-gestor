@@ -100,7 +100,8 @@
                                     <td th:text="${grup.name}"></td>
                                     <td th:text="${grup.userName}"></td>
                                     <td th:text="${grup.userSurname}"></td>
-                                    <td><span th:each="subject : ${grup.subjects}" th:text="${subject.name} "></span>
+                                    <td><span th:each="subject : ${grup.subjects}"
+                                              th:utext="${subject.name} + '<br>' "></span>
                                     </td>
                                     <td th:text="${grup.dateDeleted}"></td>
                                     <td>
@@ -135,7 +136,7 @@
                                 <label>Wybierz wychowawcę</label>
                                 <select class="custom-select" th:field="*{userId}">
                                     <option th:each="teacher : ${teachersList}"
-                                            th:text="${teacher.name} + ${ teacher.surname}"
+                                            th:text="${teacher.name} + ' ' + ${ teacher.surname}"
                                             th:value="${teacher.id}">
                                     </option>
                                 </select>

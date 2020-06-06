@@ -1,4 +1,4 @@
-<div class="col-6">
+<div class="col-8" th:fragment="sendmessagemodule">
     <div class="tab-content" id="v-pills-tabMessages">
         <div aria-labelledby="v-pills-messages-tab" class="tab-pane fade show active" id="v-pills-sendmessage"
              role="tabpanel">
@@ -6,10 +6,10 @@
             <h3> Wysyłanie wiadomości</h3>
             <br>
             <div class="modal-body">
-                <form id="sendMessage" method="post" th:action="@{/messages}"
+                <form id="sendMessage" method="post" th:action="@{/director/messages}"
                       th:object="${messageToInsert}">
                     <div class="form-row">
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-8">
                             <label>Adresat</label>
                             <select class="custom-select" th:field="*{receiver}">
                                 <option th:each="user : ${allUsers}"
@@ -20,7 +20,7 @@
                         </div>
                     </div>
                     <div class="form-row">
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-8">
                             <label>Temat</label>
                             <input class="form-control" th:field="*{topic}">
                         </div>
@@ -28,7 +28,7 @@
 
 
                     <div class="form-row">
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-8">
                             <label>Tekst</label>
                             <textarea class="form-control" placeholder="Wpisz tekst wiadomości" rows="6"
                                       th:field="*{text}"></textarea>
@@ -36,7 +36,7 @@
                     </div>
                 </form>
             </div>
-            <div class="modal-footer  col-md-6">
+            <div class="modal-footer  col-md-8">
                 <button class="btn btn-secondary" data-dismiss="modal" type="button">Anuluj</button>
                 <button class="btn btn-primary" form="sendMessage" name="action" type=submit value="send">Wyślij
                 </button>

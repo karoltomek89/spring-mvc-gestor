@@ -92,7 +92,7 @@
                                     <td th:text="${user.name}"></td>
                                     <td th:text="${user.surname}"></td>
                                     <td><span th:each="parent : ${user.parents}"
-                                              th:utext="${parent.name} + ' ' + ${parent.surname} + '<br />' "></span>
+                                              th:utext="${parent.name} + ' ' + ${parent.surname} + '<br>' "></span>
                             </tr>
                             </tbody>
                         </table>
@@ -115,7 +115,7 @@
                                 <label>Wybierz ucznia</label>
                                 <select class="custom-select" th:field="*{id}">
                                     <option th:each="student : ${studentsList}"
-                                            th:text="${student.name} + ${ student.surname}"
+                                            th:text="${student.name} + ' ' + ${ student.surname}"
                                             th:value="${student.id}">
                                     </option>
                                 </select>
@@ -125,7 +125,7 @@
                                 <label>Wybierz rodzica</label>
                                 <select class="custom-select" th:field="*{tempParentId}">
                                     <option th:each="parent : ${parentsList}"
-                                            th:text="${parent.name} + ${ parent.surname}"
+                                            th:text="${parent.name} + ' ' + ${ parent.surname}"
                                             th:value="${parent.id}">
                                     </option>
                                 </select>
@@ -156,7 +156,7 @@
                                 <label>Wybierz ucznia</label>
                                 <select class="custom-select" th:field="*{id}">
                                     <option th:each="student : ${studentsList}"
-                                            th:text="${student.name} + ${ student.surname}"
+                                            th:text="${student.name} + ' ' + ${ student.surname}"
                                             th:value="${student.id}">
                                     </option>
                                 </select>
@@ -166,7 +166,7 @@
                                 <label>Wybierz rodzica</label>
                                 <select class="custom-select" th:field="*{tempParentId}">
                                     <option th:each="parent : ${parentsList}"
-                                            th:text="${parent.name} + ${ parent.surname}"
+                                            th:text="${parent.name} + ' ' + ${ parent.surname}"
                                             th:value="${parent.id}">
                                     </option>
                                 </select>

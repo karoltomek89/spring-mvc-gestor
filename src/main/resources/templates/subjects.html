@@ -133,7 +133,7 @@
                                 <label>Wybierz nauczyciela</label>
                                 <select class="custom-select" th:field="*{userId}">
                                     <option th:each="teacher : ${teachersList}"
-                                            th:text="${teacher.name} + ${ teacher.surname}"
+                                            th:text="${teacher.name} + ' ' + ${ teacher.surname}"
                                             th:value="${teacher.id}">
                                     </option>
                                 </select>
