@@ -1,0 +1,106 @@
+<div class="row">
+    <div class="col-1">
+    </div>
+
+    <div class="col-6">
+        <div class="tab-content" id="v-pills-receivedmessages">
+            <div aria-labelledby="v-pills-received-messages-tab" class="tab-pane fade show active"
+                 id="v-pills-received-messages"
+                 role="tabpanel">
+                <br>
+                <h3>Wiadomości odebrane</h3>
+                <br>
+                <div th:each="receivedmessage : ${receivedMessages}">
+                    <FORM id="deleteReceivedMessage" method="post" th:action="@{/messages}"
+                          th:object="${sendedMessageToDelete}">
+
+                        <INPUT TYPE="hidden" name="id" th:value="${receivedmessage.id}">
+                        <button class="btn btn-primary" th:text="Nadawca + ':' + ' ' + ${receivedmessage.sender}"
+                                type="button">
+
+                        </button>
+
+                        <button class="btn btn-primary" th:text="Temat + ':' + ' ' + ${receivedmessage.topic}"
+                                type="button">
+
+                        </button>
+
+                        <button aria-controls="collapse" aria-expanded="false" class="btn btn-primary"
+                                data-toggle="collapse" th:attr="data-target='#collapse'+${receivedmessage.id}"
+                                type="button">
+                            Pokaż wiadomość
+                        </button>
+
+                        </p>
+                        <div class="collapse" th:attr="id='collapse'+${receivedmessage.id}">
+                            <div class="card card-body" th:text="${receivedmessage.text}">
+                            </div>
+
+
+                            <button class="btn btn-primary" form="deleteReceivedMessage" name="action" type=submit
+                                    value="deleteReceived">Usuń wiadomość
+                            </button>
+                        </div>
+
+                        </p>
+                    </FORM>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-1">
+    </div>
+
+    <div class="col-6">
+        <div class="tab-content" id="v-pills-sendedmessages">
+            <div aria-labelledby="v-pills-sended-messages-tab" class="tab-pane fade show active"
+                 id="v-pills-sended-messages"
+                 role="tabpanel">
+                <br>
+                <h3>Wiadomości wysłane</h3>
+                <br>
+
+                <div th:each="sendeddmessage : ${sendedMessages}">
+
+                    <FORM id="deleteSendedMessage" method="post" th:action="@{/messages}"
+                          th:object="${sendedMessageToDelete}">
+
+                        <INPUT TYPE="hidden" name="id" th:value="${sendeddmessage.id}">
+
+                        <button class="btn btn-primary" th:text="Odbiorca + ':' + ' ' + ${sendeddmessage.receiver}"
+                                type="button">
+                        </button>
+
+                        <button class="btn btn-primary" th:text="Temat + ':' + ' ' + ${sendeddmessage.topic}"
+                                type="button">
+                        </button>
+
+                        <button aria-controls="collapse" aria-expanded="false" class="btn btn-primary"
+                                data-toggle="collapse" th:attr="data-target='#collapse'+${sendeddmessage.id}"
+                                type="button">
+                            Pokaż wiadomość
+                        </button>
+
+                        </p>
+                        <div class="collapse" th:attr="id='collapse'+${sendeddmessage.id}">
+                            <div class="card card-body" th:text="${sendeddmessage.text}">
+                            </div>
+
+                            <button class="btn btn-primary" form="deleteSendedMessage" name="action" type=submit
+                                    value="deleteSended">
+                                Usuń wiadomość
+                            </button>
+                        </div>
+                        </p>
+                        <br>
+                    </FORM>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

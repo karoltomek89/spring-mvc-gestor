@@ -49,22 +49,16 @@
         <div aria-orientation="vertical" class="nav flex-column nav-pills" id="v-pills-tab" role="tablist">
 
             <a aria-controls="v-pills-info" aria-selected="false" class="nav-link"
-               href="/director/info" id="v-pills-info-tab" role="tab">Info</a>
+               href="/teacher/info" id="v-pills-info-tab" role="tab">Info</a>
 
-            <a aria-controls="v-pills-users" aria-selected="false" class="nav-link"
-               href="/director/users" id="v-pills-users-tab" role="tab">Zarządzaj kontami</a>
+            <a aria-controls="v-pills-parents" aria-selected="false" class="nav-link"
+               href="/teacher/parents" id="v-pills-parents-tab" role="tab">Zarządzaj rodzicami</a>
 
-            <a aria-controls="v-pills-subjects" aria-selected="false" class="nav-link"
-               href="/director/subjects" id="v-pills-subjects-tab" role="tab">Zarządzaj przedmiotami</a>
-
-            <a aria-controls="v-pills-students" aria-selected="false" class="nav-link"
-               href="/director/students" id="v-pills-students-tab" role="tab">Zarządzaj uczniami</a>
-
-            <a aria-controls="v-pills-grups" aria-selected="false" class="nav-link"
-               href="/director/grups" id="v-pills-grups-tab" role="tab">Zarządzaj klasami</a>
+            <a aria-controls="v-pills-grades" aria-selected="false" class="nav-link"
+               href="/subjects" id="v-pills-grades-tab" role="tab">Zarządzaj ocenami</a>
 
             <a aria-controls="v-pills-messages" aria-selected="true" class="nav-link active"
-               href="/messages" id="v-pills-messages-tab" role="tab">Wiadomości</a>
+               href="/teacher/messages" id="v-pills-messages-tab" role="tab">Wiadomości</a>
 
             <a aria-controls="v-pills-logout" aria-selected="false" class="nav-link"
                href="/logout" id="v-pills-logout-tab" role="tab">Wyloguj</a>
@@ -80,7 +74,7 @@
                 <h3> Wysyłanie wiadomości</h3>
                 <br>
                 <div class="modal-body">
-                    <form id="sendMessage" method="post" th:action="@{/messages}"
+                    <form id="sendMessage" method="post" th:action="@{/teacher/messages}"
                           th:object="${messageToInsert}">
                         <div class="form-row">
                             <div class="form-group col-md-6">
@@ -133,7 +127,7 @@
                 <h3>Wiadomości odebrane</h3>
                 <br>
                 <div th:each="receivedmessage : ${receivedMessages}">
-                    <FORM id="deleteReceivedMessage" method="post" th:action="@{/messages}"
+                    <FORM id="deleteReceivedMessage" method="post" th:action="@{/teacher/messages}"
                           th:object="${sendedMessageToDelete}">
 
                         <INPUT TYPE="hidden" name="id" th:value="${receivedmessage.id}">
@@ -189,7 +183,7 @@
 
                 <div th:each="sendeddmessage : ${sendedMessages}">
 
-                    <FORM id="deleteSendedMessage" method="post" th:action="@{/messages}"
+                    <FORM id="deleteSendedMessage" method="post" th:action="@{/teacher/messages}"
                           th:object="${sendedMessageToDelete}">
 
                         <INPUT TYPE="hidden" name="id" th:value="${sendeddmessage.id}">
