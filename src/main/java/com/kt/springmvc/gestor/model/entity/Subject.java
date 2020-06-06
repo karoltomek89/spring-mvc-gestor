@@ -16,7 +16,7 @@ public class Subject {
     private User user;
 
     @ManyToMany(mappedBy = "subjects")
-    private Set<Grup> grups = new HashSet();
+    private Set<Grup> grups = new HashSet<>();
 
     private String name;
     private Date dateDeleted;

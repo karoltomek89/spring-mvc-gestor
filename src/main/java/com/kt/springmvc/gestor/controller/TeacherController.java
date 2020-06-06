@@ -19,6 +19,9 @@ import java.util.List;
 @Controller
 public class TeacherController {
 
+    private final String DELETE = "delete";
+    private final String ADD = "add";
+
     @Autowired
     private UserService userService;
 
@@ -52,10 +55,10 @@ public class TeacherController {
 
     @PostMapping("/teacher/parents")
     public String registerGrup(@RequestParam("action") String action, @ModelAttribute UserDto userDto) {
-        if ("addparent".equals(action)) {
+        if (ADD.equals(action)) {
             userService.addParent(userDto);
         }
-        if ("deleteparent".equals(action)) {
+        if (DELETE.equals(action)) {
             userService.deleteParent(userDto);
         }
         return "redirect:/teacher/parents";

@@ -72,16 +72,21 @@ public class GrupService {
         grup = grupRepository.save(grup);
     }
 
+
+    public GrupDto fillGrupsByNameAndSurname(GrupDto grup) {
+        User user = userRepository.findById(grup.getUserId()).get();
+        grup.setUserName(user.getName());
+        grup.setUserSurname(user.getSurname());
+        return grup;
+    }
+
     public List<GrupDto> getAllGrups() {
-        List<GrupDto> grupDtoList = grupRepository.findAll()
+        List<GrupDto> allGrups = grupRepository.findAll()
                 .stream()
                 .map(s -> modelMapper.map(s, GrupDto.class))
+                .map(this::fillGrupsByNameAndSurname)
                 .collect(Collectors.toList());
-        grupDtoList.stream().forEach((sub) -> {
-            sub.setUserName(userRepository.findById(sub.getUserId()).get().getName());
-            sub.setUserSurname(userRepository.findById(sub.getUserId()).get().getSurname());
-        });
-        return grupDtoList;
+        return allGrups;
     }
 
     public void deleteGrup(Long id) {
@@ -94,11 +99,12 @@ public class GrupService {
     public List<GrupDto> getAllGrupsOfTeacher() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         User user = userRepository.findByNameOrderByName(authentication.getName());
-        List<GrupDto> grupDtoList = grupRepository.findByUserId(user.getId())
+        List<GrupDto> allGrupsOfTeacher = grupRepository.findByUserId(user.getId())
                 .stream()
                 .map(s -> modelMapper.map(s, GrupDto.class))
                 .collect(Collectors.toList());
-        return grupDtoList;
+        return allGrupsOfTeacher;
+
     }
 
     public List<UserDto> getAllStudentsOfTeacher() {

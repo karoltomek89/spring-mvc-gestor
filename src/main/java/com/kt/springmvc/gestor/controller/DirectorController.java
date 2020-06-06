@@ -19,6 +19,12 @@ import java.util.List;
 @Controller
 public class DirectorController {
 
+    private final String DELETE = "delete";
+    private final String ADD = "add";
+    private final String ACTIVATE = "activate";
+    private final String ADDSUBJECT = "addsubject";
+    private final String DELETESUBJECT = "deletesubject";
+
     @Autowired
     private UserService userService;
 
@@ -40,10 +46,10 @@ public class DirectorController {
 
     @PostMapping("/director/users")
     public String manageUser(@RequestParam("action") String action, @ModelAttribute("user") UserDto user) {
-        if ("activate".equals(action)) {
+        if (ACTIVATE.equals(action)) {
             userService.activateUser(user.getId());
         }
-        if ("delete".equals(action)) {
+        if (DELETE.equals(action)) {
             userService.deleteUser(user.getId());
         }
         return "redirect:/director/users";
@@ -62,10 +68,10 @@ public class DirectorController {
 
     @PostMapping("/director/subjects")
     public String registerSubject(@RequestParam("action") String action, @ModelAttribute SubjectDto subjectDto) {
-        if ("add".equals(action)) {
+        if (ADD.equals(action)) {
             subjectService.registerSubject(subjectDto);
         }
-        if ("delete".equals(action)) {
+        if (DELETE.equals(action)) {
             subjectService.deleteSubject(subjectDto.getId());
         }
         return "redirect:/director/subjects";
@@ -86,16 +92,16 @@ public class DirectorController {
 
     @PostMapping("/director/grups")
     public String registerGrup(@RequestParam("action") String action, @ModelAttribute GrupDto grupDto, @ModelAttribute SubjectDto subjectDto) {
-        if ("addgrup".equals(action)) {
+        if (ADD.equals(action)) {
             grupService.registerGrup(grupDto);
         }
-        if ("addsubjecttogrup".equals(action)) {
+        if (ADDSUBJECT.equals(action)) {
             grupService.addSubjectToGrup(grupDto);
         }
-        if ("deletesubjectfromgrup".equals(action)) {
+        if (DELETESUBJECT.equals(action)) {
             grupService.removeSubjectFromGrup(subjectDto, grupDto);
         }
-        if ("deletegrup".equals(action)) {
+        if (DELETE.equals(action)) {
             grupService.deleteGrup(grupDto.getId());
         }
         return "redirect:/director/grups";
@@ -114,10 +120,10 @@ public class DirectorController {
 
     @PostMapping("/director/students")
     public String registerStudent(@RequestParam("action") String action, @ModelAttribute GrupDto grupDto) {
-        if ("add".equals(action)) {
+        if (ADD.equals(action)) {
             grupService.addStudentToGrup(grupDto);
         }
-        if ("delete".equals(action)) {
+        if (DELETE.equals(action)) {
             grupService.removeStudentFromGrup(grupDto);
         }
         return "redirect:/director/students";

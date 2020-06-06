@@ -31,14 +31,14 @@ public class User {
             joinColumns = @JoinColumn(name = "studentId"),
             inverseJoinColumns = @JoinColumn(name = "parentId")
     )
-    private Set<User> parents = new HashSet();
+    private Set<User> parents = new HashSet<>();
 
     @ManyToMany
     @JoinTable(name = "students_has_parents",
             joinColumns = @JoinColumn(name = "parentId"),
             inverseJoinColumns = @JoinColumn(name = "studentId")
     )
-    private Set<User> students = new HashSet();
+    private Set<User> students = new HashSet<>();
 
     private String name;
     private String surname;

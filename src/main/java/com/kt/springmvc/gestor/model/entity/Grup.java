@@ -20,10 +20,10 @@ public class Grup {
             name = "grups_has_subjects",
             joinColumns = @JoinColumn(name = "grupId"),
             inverseJoinColumns = @JoinColumn(name = "subjectId"))
-    private Set<Subject> subjects = new HashSet();
+    private Set<Subject> subjects = new HashSet<>();
 
     @OneToMany(mappedBy = "studentGrup")
-    private Set<User> students = new HashSet();
+    private Set<User> students = new HashSet<>();
 
     private String name;
     private Date dateDeleted;

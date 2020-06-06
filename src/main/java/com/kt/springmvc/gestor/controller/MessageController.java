@@ -15,23 +15,15 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class MessageController {
 
+    private final String SEND = "send";
+    private final String DELETESENDED = "deletesended";
+    private final String DELETERECEIVED = "deletereceived";
+
     @Autowired
     private MessageService messageService;
 
     @Autowired
     private UserService userService;
-
-    @GetMapping("/director/messages")
-    public ModelAndView getDirectorMessages(@ModelAttribute UserDto userDto) {
-        ModelAndView modelAndView = new ModelAndView("directormessages");
-        modelAndView.addObject("messageToInsert", new MessageDto());
-        modelAndView.addObject("receivedMessageToDelete", new MessageDto());
-        modelAndView.addObject("sendedMessageToDelete", new MessageDto());
-        modelAndView.addObject("receivedMessages", messageService.getReceivedMessages());
-        modelAndView.addObject("sendedMessages", messageService.getSendedMessages());
-        modelAndView.addObject("allUsers", userService.getAllUsers());
-        return modelAndView;
-    }
 
     @GetMapping("/teacher/messages")
     public ModelAndView getTeacherMessages(@ModelAttribute UserDto userDto) {
@@ -45,15 +37,27 @@ public class MessageController {
         return modelAndView;
     }
 
+    @GetMapping("/director/messages")
+    public ModelAndView getDirectorMessages(@ModelAttribute UserDto userDto) {
+        ModelAndView modelAndView = new ModelAndView("directormessages");
+        modelAndView.addObject("messageToInsert", new MessageDto());
+        modelAndView.addObject("receivedMessageToDelete", new MessageDto());
+        modelAndView.addObject("sendedMessageToDelete", new MessageDto());
+        modelAndView.addObject("receivedMessages", messageService.getReceivedMessages());
+        modelAndView.addObject("sendedMessages", messageService.getSendedMessages());
+        modelAndView.addObject("allUsers", userService.getAllUsers());
+        return modelAndView;
+    }
+
     @PostMapping("/teacher/messages")
     public String teacherSendMessage(@RequestParam("action") String action, @ModelAttribute MessageDto messageDto) {
-        if ("send".equals(action)) {
+        if (SEND.equals(action)) {
             messageService.sendMessage(messageDto);
         }
-        if ("deleteReceived".equals(action)) {
+        if (DELETERECEIVED.equals(action)) {
             messageService.deleteReceivedMessage(messageDto);
         }
-        if ("deleteSended".equals(action)) {
+        if (DELETESENDED.equals(action)) {
             messageService.deleteSendedMessage(messageDto);
         }
         return "redirect:/teacher/messages";
@@ -61,15 +65,15 @@ public class MessageController {
 
     @PostMapping("/director/messages")
     public String directorSendMessage(@RequestParam("action") String action, @ModelAttribute MessageDto messageDto) {
-        if ("send".equals(action)) {
+        if (SEND.equals(action)) {
             messageService.sendMessage(messageDto);
         }
-        if ("deleteReceived".equals(action)) {
+        if (DELETERECEIVED.equals(action)) {
             messageService.deleteReceivedMessage(messageDto);
         }
-        if ("deleteSended".equals(action)) {
+        if (DELETESENDED.equals(action)) {
             messageService.deleteSendedMessage(messageDto);
         }
-        return "redirect:/director/messagess";
+        return "redirect:/director/messages";
     }
 }

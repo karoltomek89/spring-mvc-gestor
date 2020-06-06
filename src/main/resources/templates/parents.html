@@ -86,7 +86,6 @@
                             </thead>
                             <tbody th:each="grup : ${grupsList}">
                             <tr th:each="user : ${grup.students}">
-                                <form action="/teacher/parents" method="post" th:object="${userToInsert}">
                                     <input name="id" th:value="${user.id}" type="hidden">
                                     <td th:text="${user.id}"></td>
                                     <td th:text="${grup.name}"></td>
@@ -94,7 +93,6 @@
                                     <td th:text="${user.surname}"></td>
                                     <td><span th:each="parent : ${user.parents}"
                                               th:utext="${parent.name} + ' ' + ${parent.surname} + '<br />' "></span>
-                                </form>
                             </tr>
                             </tbody>
                         </table>
@@ -133,7 +131,7 @@
                                 </select>
                             </div>
                         </form>
-                        <button class="btn btn-primary" form="addParent" name="action" type=submit value="addparent">
+                        <button class="btn btn-primary" form="addParent" name="action" type=submit value="add">
                             Dodaj
                             rodzica
                         </button>
@@ -175,7 +173,7 @@
                             </div>
                         </form>
                         <button class="btn btn-primary" form="deleteParent" name="action" type=submit
-                                value="deleteparent">Usuń rodzica
+                                value="delete">Usuń rodzica
                         </button>
                     </div>
                 </div>

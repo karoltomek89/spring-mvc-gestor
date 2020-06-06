@@ -38,16 +38,19 @@ public class SubjectService {
         subject = subjectRepository.save(subject);
     }
 
+    public SubjectDto fillSubjectsByNameAndSurname(SubjectDto sub) {
+        User user = userRepository.findById(sub.getUserId()).get();
+        sub.setUserName(user.getName());
+        sub.setUserSurname(user.getSurname());
+        return sub;
+    }
+
     public List<SubjectDto> getAllSubjects() {
-        List<SubjectDto> subjectDtoList = subjectRepository.findAll()
+        return subjectRepository.findAll()
                 .stream()
                 .map(s -> modelMapper.map(s, SubjectDto.class))
+                .map(this::fillSubjectsByNameAndSurname)
                 .collect(Collectors.toList());
-        subjectDtoList.stream().forEach((sub) -> {
-            sub.setUserName(userRepository.findById(sub.getUserId()).get().getName());
-            sub.setUserSurname(userRepository.findById(sub.getUserId()).get().getSurname());
-        });
-        return subjectDtoList;
     }
 
     public void deleteSubject(Long id) {
