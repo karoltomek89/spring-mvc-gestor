@@ -48,25 +48,22 @@
         <div aria-orientation="vertical" class="nav flex-column nav-pills" id="v-pills-tab" role="tablist">
 
             <a aria-controls="v-pills-info" aria-selected="false" class="nav-link"
-               href="/info" id="v-pills-info-tab" role="tab">Info</a>
+               href="/director/info" id="v-pills-info-tab" role="tab">Info</a>
 
             <a aria-controls="v-pills-users" aria-selected="false" class="nav-link"
-               href="/users" id="v-pills-users-tab" role="tab">Zarządzaj kontami</a>
+               href="/director/users" id="v-pills-users-tab" role="tab">Zarządzaj kontami</a>
 
             <a aria-controls="v-pills-subjects" aria-selected="false" class="nav-link"
-               href="/subjects" id="v-pills-subjects-tab" role="tab">Zarządzaj przedmiotami</a>
-
-            <a aria-controls="v-pills-teachers" aria-selected="false" class="nav-link"
-               href="/teachers" id="v-pills-teachers-tab" role="tab">Zarządzaj nauczycielami</a>
+               href="/director/subjects" id="v-pills-subjects-tab" role="tab">Zarządzaj przedmiotami</a>
 
             <a aria-controls="v-pills-students" aria-selected="false" class="nav-link"
-               href="/students" id="v-pills-students-tab" role="tab">Zarządzaj uczniami</a>
+               href="/director/students" id="v-pills-students-tab" role="tab">Zarządzaj uczniami</a>
 
-            <a aria-controls="v-pills-grups" aria-selected="false" class="nav-link"
-               href="/grups" id="v-pills-grups-tab" role="tab">Zarządzaj klasami</a>
+            <a aria-controls="v-pills-grups" aria-selected="true" class="nav-link"
+               href="/director/grups" id="v-pills-grups-tab" role="tab">Zarządzaj klasami</a>
 
             <a aria-controls="v-pills-messages" aria-selected="false" class="nav-link"
-               href="/messages" id="v-pills-messages-tab" role="tab">Wiadomości</a>
+               href="/director/messages" id="v-pills-messages-tab" role="tab">Wiadomości</a>
 
             <a aria-controls="v-pills-logout" aria-selected="false" class="nav-link"
                href="/logout" id="v-pills-logout-tab" role="tab">Wyloguj</a>
@@ -97,7 +94,7 @@
                             </thead>
                             <tbody>
                             <tr th:each="grup : ${grupsList}">
-                                <form action="/grups" method="post" th:object="${grupToInsert}">
+                                <form action="/director/grups" method="post" th:object="${grupToInsert}">
                                     <input name="id" th:value="${grup.id}" type="hidden">
                                     <td th:text="${grup.id}"></td>
                                     <td th:text="${grup.name}"></td>
@@ -127,7 +124,7 @@
                 <div class="tab-content" id="v-pills-tabContent-addgrup">
                     <div aria-labelledby="v-pills-addsubject-tab" class="tab-pane fade show active"
                          id="v-pills-addgrup" role="tabpanel">
-                        <form id="addGrup" method="post" th:action="@{/grups}" th:object="${grupToInsert}">
+                        <form id="addGrup" method="post" th:action="@{/director/grups}" th:object="${grupToInsert}">
 
                             <div class="form-group">
                                 <label>Nazwa klasy</label>
@@ -160,7 +157,8 @@
                 <div class="tab-content" id="v-pills-tabContent-addsubjecttogrup">
                     <div aria-labelledby="v-pills-addsubject-tab" class="tab-pane fade show active"
                          id="v-pills-addsubjecttogrup" role="tabpanel">
-                        <form id="addSubjectToGrup" method="post" th:action="@{/grups}" th:object="${grupToInsert}">
+                        <form id="addSubjectToGrup" method="post" th:action="@{/director/grups}"
+                              th:object="${grupToInsert}">
 
                             <div class="form-group">
                                 <label>Wybierz klasę</label>
@@ -199,7 +197,7 @@
                 <div class="tab-content" id="v-pills-tabContent-deletesubjectfromgrup">
                     <div aria-labelledby="v-pills-deletesubject-tab" class="tab-pane fade show active"
                          id="v-pills-deletesubjectfromgrup" role="tabpanel">
-                        <form id="deleteSubjectFromGrup" method="post" th:action="@{/grups}"
+                        <form id="deleteSubjectFromGrup" method="post" th:action="@{/director/grups}"
                               th:object="${grupToInsert}">
 
                             <div class="form-group">

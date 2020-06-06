@@ -3,7 +3,6 @@ package com.kt.springmvc.gestor.controller;
 import com.kt.springmvc.gestor.model.dto.GrupDto;
 import com.kt.springmvc.gestor.model.dto.SubjectDto;
 import com.kt.springmvc.gestor.model.dto.UserDto;
-import com.kt.springmvc.gestor.model.entity.User;
 import com.kt.springmvc.gestor.service.GrupService;
 import com.kt.springmvc.gestor.service.SubjectService;
 import com.kt.springmvc.gestor.service.UserService;
@@ -15,9 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Controller
 public class DirectorController {
@@ -36,12 +33,12 @@ public class DirectorController {
         return "director";
     }
 
-    @GetMapping("/users")
+    @GetMapping("/director/users")
     public ModelAndView getAllUsers() {
         return new ModelAndView("users", "userList", userService.getAllUsers());
     }
 
-    @PostMapping("/manageusers")
+    @PostMapping("/director/users")
     public String manageUser(@RequestParam("action") String action, @ModelAttribute("user") UserDto user) {
         if ("activate".equals(action)) {
             userService.activateUser(user.getId());
@@ -49,10 +46,10 @@ public class DirectorController {
         if ("delete".equals(action)) {
             userService.deleteUser(user.getId());
         }
-        return "redirect:/users";
+        return "redirect:/director/users";
     }
 
-    @GetMapping("/subjects")
+    @GetMapping("/director/subjects")
     public ModelAndView getAllSubjectsWithTeachers() {
         List<UserDto> teachersList = userService.getTeachers();
         List<SubjectDto> subjectsList = subjectService.getAllSubjects();
@@ -63,7 +60,7 @@ public class DirectorController {
         return modelAndView;
     }
 
-    @PostMapping("/subjects")
+    @PostMapping("/director/subjects")
     public String registerSubject(@RequestParam("action") String action, @ModelAttribute SubjectDto subjectDto) {
         if ("add".equals(action)) {
             subjectService.registerSubject(subjectDto);
@@ -71,10 +68,10 @@ public class DirectorController {
         if ("delete".equals(action)) {
             subjectService.deleteSubject(subjectDto.getId());
         }
-        return "redirect:/subjects";
+        return "redirect:/director/subjects";
     }
 
-    @GetMapping("/grups")
+    @GetMapping("/director/grups")
     public ModelAndView getAllGrupsWithTeachers() {
         List<UserDto> teachersList = userService.getTeachers();
         List<SubjectDto> subjectsList = subjectService.getAllSubjects();
@@ -87,7 +84,7 @@ public class DirectorController {
         return modelAndView;
     }
 
-    @PostMapping("/grups")
+    @PostMapping("/director/grups")
     public String registerGrup(@RequestParam("action") String action, @ModelAttribute GrupDto grupDto, @ModelAttribute SubjectDto subjectDto) {
         if ("addgrup".equals(action)) {
             grupService.registerGrup(grupDto);
@@ -101,10 +98,10 @@ public class DirectorController {
         if ("deletegrup".equals(action)) {
             grupService.deleteGrup(grupDto.getId());
         }
-        return "redirect:/grups";
+        return "redirect:/director/grups";
     }
 
-    @GetMapping("/students")
+    @GetMapping("/director/students")
     public ModelAndView getAllStudentsWithGrups() {
         List<UserDto> studentsList = userService.getStudents();
         List<GrupDto> grupsList = grupService.getAllGrups();
@@ -115,7 +112,7 @@ public class DirectorController {
         return modelAndView;
     }
 
-    @PostMapping("/students")
+    @PostMapping("/director/students")
     public String registerStudent(@RequestParam("action") String action, @ModelAttribute GrupDto grupDto) {
         if ("add".equals(action)) {
             grupService.addStudentToGrup(grupDto);
@@ -123,7 +120,7 @@ public class DirectorController {
         if ("delete".equals(action)) {
             grupService.removeStudentFromGrup(grupDto);
         }
-        return "redirect:/students";
+        return "redirect:/director/students";
     }
 
 }

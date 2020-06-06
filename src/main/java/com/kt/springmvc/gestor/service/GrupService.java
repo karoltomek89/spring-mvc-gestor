@@ -36,7 +36,6 @@ public class GrupService {
     }
 
     public void registerGrup(GrupDto grupDto) {
-        modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
         User user = userRepository.findById(grupDto.getUserId()).get();
         Grup grup = modelMapper.map(grupDto, Grup.class);
         grup.setUser(user);
@@ -60,8 +59,8 @@ public class GrupService {
     public void addStudentToGrup(GrupDto grupDto) {
         User user = userRepository.findById(grupDto.getTempStudentId()).get();
         Grup grup = grupRepository.findById(grupDto.getId()).get();
-        grup.getStudents().add(user);
-        grup = grupRepository.save(grup);
+        user.setStudentGrup(grup);
+        user = userRepository.save(user);
     }
 
     public void removeStudentFromGrup(GrupDto grupDto) {
@@ -72,9 +71,6 @@ public class GrupService {
     }
 
     public List<GrupDto> getAllGrups() {
-        modelMapper.typeMap(Grup.class, GrupDto.class)
-                .addMappings(m -> m.map(src -> src.getUser().getId(), GrupDto::setUserId))
-                .addMappings(m -> m.map(src -> src.getStudents(), GrupDto::setStudents));
         List<GrupDto> grupDtoList = grupRepository.findAll()
                 .stream()
                 .map(s -> modelMapper.map(s, GrupDto.class))

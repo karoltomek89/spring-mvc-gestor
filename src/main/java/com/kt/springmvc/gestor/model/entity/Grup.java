@@ -22,7 +22,7 @@ public class Grup {
             inverseJoinColumns = @JoinColumn(name = "subjectId"))
     private Set<Subject> subjects = new HashSet();
 
-    @OneToMany(mappedBy = "grup")
+    @OneToMany(mappedBy = "studentGrup")
     private Set<User> students = new HashSet();
 
     private String name;
@@ -91,6 +91,9 @@ public class Grup {
     public String toString() {
         return "Grup{" +
                 "id=" + id +
+                ", user=" + user +
+                ", subjects=" + subjects +
+                ", students=" + students +
                 ", name='" + name + '\'' +
                 ", dateDeleted=" + dateDeleted +
                 '}';

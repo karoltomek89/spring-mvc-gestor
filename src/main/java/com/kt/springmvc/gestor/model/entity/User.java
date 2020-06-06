@@ -22,7 +22,8 @@ public class User {
     private Set<Grup> grups;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    private Grup grup;
+    @JoinColumn(name = "studentGrups_grupId")
+    private Grup studentGrup;
 
     private String name;
     private String surname;
@@ -123,18 +124,22 @@ public class User {
         this.grups = grups;
     }
 
-    public Grup getGrup() {
-        return grup;
+    public Grup getStudentGrup() {
+        return studentGrup;
     }
 
-    public void setGrup(Grup grup) {
-        this.grup = grup;
+    public void setStudentGrup(Grup grup) {
+        this.studentGrup = grup;
     }
 
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
+                ", grades=" + grades +
+                ", subjects=" + subjects +
+                ", grups=" + grups +
+                ", studentGrup=" + studentGrup +
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", email='" + email + '\'' +
