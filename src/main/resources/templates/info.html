@@ -47,10 +47,10 @@
     <div class="col-1">
         <div aria-orientation="vertical" class="nav flex-column nav-pills" id="v-pills-tab" role="tablist">
 
-            <a aria-controls="v-pills-info" aria-selected="false" class="nav-link"
+            <a aria-controls="v-pills-info" aria-selected="true" class="nav-link active"
                href="/info" id="v-pills-info-tab" role="tab">Info</a>
 
-            <a aria-controls="v-pills-users" aria-selected="true" class="nav-link active"
+            <a aria-controls="v-pills-users" aria-selected="false" class="nav-link"
                href="/director/users" id="v-pills-users-tab" role="tab">Zarządzaj kontami</a>
 
             <a aria-controls="v-pills-subjects" aria-selected="false" class="nav-link"
@@ -70,51 +70,34 @@
 
         </div>
     </div>
-        <div class="col-10">
-            <div class="tab-content" id="v-pills-tabContent">
-                <div aria-labelledby="v-pills-users-tab" class="tab-pane fade show active" id="v-pills-grades"
-                     role="tabpanel">
-                    <br>
-                    <h3> Lista przedmiotów wraz z nauczycielami prowadzącymi</h3>
-                    <br>
-                    <table class="table table-bordered">
-                        <thead>
-                        <tr>
-                            <th scope="col">Imię</th>
-                            <th scope="col">Nazwisko</th>
-                            <th scope="col">e-mail</th>
-                            <th scope="col">Typ konta</th>
-                            <th scope="col">Aktywowane</th>
-                            <th scope="col">Aktywacja</th>
-                            <th scope="col">Data usunięcia</th>
-                            <th scope="col">Usuwanie</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr th:each="user : ${userList}">
-                            <form action="/director/users" method="post" th:object="${user}">
-                                <input name="id" th:value="${user.id}" type="hidden">
-                                <td th:text="${user.name}"></td>
-                                <td th:text="${user.surname}"></td>
-                                <td th:text="${user.email}"></td>
-                                <td th:text="${user.role}"></td>
-                                <td th:text="${user.active}"></td>
-                                <td>
-                                    <button class="btn btn-warning" name="action" type=submit value="activate">Aktywuj
-                                    </button>
-                                </td>
-                                <td th:text="${user.dateDeleted}"></td>
-                                <td>
-                                    <button class="btn btn-danger" name="action" type=submit value="delete">Usuń
-                                    </button>
-                                </td>
-                            </form>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
+    <div class="col-10">
+        <div class="tab-content" id="v-pills-tabContent">
+            <div aria-labelledby="v-pills-users-tab" class="tab-pane fade show active" id="v-pills-grades"
+                 role="tabpanel">
+                <br>
+                <h3> Informacje o koncie</h3>
+                <br>
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th scope="col">Imię</th>
+                        <th scope="col">Nazwisko</th>
+                        <th scope="col">e-mail</th>
+                        <th scope="col">Typ konta</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td th:text="${user.name}"></td>
+                        <td th:text="${user.surname}"></td>
+                        <td th:text="${user.email}"></td>
+                        <td th:text="${user.role}"></td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
+    </div>
 </div>
 
 

@@ -69,4 +69,10 @@ public class UserService {
         userRepository.save(user);
     }
 
+    public UserDto getLoggedUser() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        User user = userRepository.findByNameOrderByName(authentication.getName());
+        return modelMapper.map(user, UserDto.class);
+    }
+
 }
