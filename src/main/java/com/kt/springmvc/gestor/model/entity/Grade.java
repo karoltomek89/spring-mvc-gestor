@@ -1,6 +1,7 @@
 package com.kt.springmvc.gestor.model.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Grade {
@@ -8,10 +9,14 @@ public class Grade {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotNull
     @ManyToOne(cascade = CascadeType.ALL)
     private User user;
 
+    @NotNull
     private Integer subjectId;
+
+    @NotNull
     private Long value;
 
     public Grade() {

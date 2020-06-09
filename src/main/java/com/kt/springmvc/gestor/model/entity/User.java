@@ -1,6 +1,7 @@
 package com.kt.springmvc.gestor.model.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.sql.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -40,11 +41,17 @@ public class User {
     )
     private Set<User> students = new HashSet<>();
 
+    @NotNull
     private String name;
+    @NotNull
     private String surname;
+    @NotNull
+    @Column(unique = true)
     private String email;
+    @NotNull
     private String password;
     private Date dateDeleted;
+    @NotNull
     private String role;
     private boolean active;
 

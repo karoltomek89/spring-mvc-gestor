@@ -46,7 +46,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .formLogin()
                 .loginPage("/login")
                 .permitAll()
-                .usernameParameter("username")
+                .usernameParameter("email")
                 .passwordParameter("password")
                 .loginProcessingUrl("/login-process")
                 .failureUrl("/login?error")
@@ -64,8 +64,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .password(passwordEncoder.encode("password"))
                 .roles("DIRECTOR");
         auth.jdbcAuthentication()
-                .usersByUsernameQuery("SELECT u.name, u.password, u.active, from user u where u.name=?")
-                .authoritiesByUsernameQuery("SELECT u.name, u.role, u.active, from user u where u.name=?")
+                .usersByUsernameQuery("SELECT u.email, u.password, u.active, from user u where u.email=?")
+                .authoritiesByUsernameQuery("SELECT u.email, u.role, u.active, from user u where u.email=?")
                 .dataSource(jdbcTemplate.getDataSource())
                 .passwordEncoder(passwordEncoder);
     }

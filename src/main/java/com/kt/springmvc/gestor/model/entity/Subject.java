@@ -1,6 +1,7 @@
 package com.kt.springmvc.gestor.model.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -11,6 +12,7 @@ public class Subject {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotNull
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "userId")
     private User user;
@@ -18,6 +20,7 @@ public class Subject {
     @ManyToMany(mappedBy = "subjects")
     private Set<Grup> grups = new HashSet<>();
 
+    @NotNull
     private String name;
     private Date dateDeleted;
 
