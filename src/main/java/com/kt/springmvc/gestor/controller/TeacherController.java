@@ -1,9 +1,12 @@
 package com.kt.springmvc.gestor.controller;
 
+import com.kt.springmvc.gestor.model.dto.GradeDto;
 import com.kt.springmvc.gestor.model.dto.GrupDto;
 import com.kt.springmvc.gestor.model.dto.SubjectDto;
 import com.kt.springmvc.gestor.model.dto.UserDto;
+import com.kt.springmvc.gestor.service.GradeService;
 import com.kt.springmvc.gestor.service.GrupService;
+import com.kt.springmvc.gestor.service.SubjectService;
 import com.kt.springmvc.gestor.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -27,6 +30,12 @@ public class TeacherController {
 
     @Autowired
     private GrupService grupService;
+
+    @Autowired
+    private SubjectService subjectService;
+
+    @Autowired
+    private GradeService gradeService;
 
     @GetMapping("/teacher")
     public String indexView() {
@@ -62,5 +71,32 @@ public class TeacherController {
             userService.deleteParent(userDto);
         }
         return "redirect:/teacher/parents";
+    }
+
+    @GetMapping("/teacher/grupssubjects")
+    public ModelAndView getAllGrupsWithSubjects() {
+        List<GrupDto> grupsList = grupService.getAllGrupsOfTeacher();
+        List<SubjectDto> subjectsList = subjectService.getAllSubjectsOfTeacher();
+        ModelAndView modelAndView = new ModelAndView("teachergrupssubjects");
+        modelAndView.addObject("subjectsList", subjectsList);
+        modelAndView.addObject("grupsList", grupsList);
+        return modelAndView;
+    }
+
+    @GetMapping("/teacher/grades")
+    public ModelAndView getAllGradesOfGrup(@RequestParam("subjectId") String subjectId, @RequestParam("grupId") String grupId) {
+        GrupDto studentsGrupList = grupService.findGrupById(Long.valueOf(grupId));
+        ModelAndView modelAndView = new ModelAndView("teachergrades");
+        modelAndView.addObject("gradeToInsert", new GradeDto());
+        modelAndView.addObject("studentsGrupList", studentsGrupList);
+        return modelAndView;
+    }
+
+    @PostMapping("/teacher/grades")
+    public String addGrade(@RequestParam("action") String action, @ModelAttribute GradeDto gradeDto) {
+        if (ADD.equals(action)) {
+            gradeService.addGradeToSubject(gradeDto);
+        }
+        return "redirect:/teacher/grades";
     }
 }

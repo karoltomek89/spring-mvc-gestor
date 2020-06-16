@@ -3,7 +3,8 @@ package com.kt.springmvc.gestor.model.dto;
 public class GradeDto {
 
     private Long id;
-    private Integer subjectId;
+    private Long subjectId;
+    private Long studentId;
     private Long value;
 
     public Long getId() {
@@ -14,14 +15,6 @@ public class GradeDto {
         this.id = id;
     }
 
-    public Integer getSubjectId() {
-        return subjectId;
-    }
-
-    public void setSubjectId(Integer subjectId) {
-        this.subjectId = subjectId;
-    }
-
     public Long getValue() {
         return value;
     }
@@ -30,4 +23,19 @@ public class GradeDto {
         this.value = value;
     }
 
+    public Long getSubjectId() {
+        return subjectId;
+    }
+
+    public void setSubjectId(Long subjectId) {
+        this.subjectId = subjectId;
+    }
+
+    public Long getStudentId() {
+        return studentId;
+    }
+
+    public void setStudentId(Long studentId) {
+        this.studentId = studentId;
+    }
 }

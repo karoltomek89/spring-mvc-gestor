@@ -1,5 +1,6 @@
 package com.kt.springmvc.gestor.service;
 
+import com.kt.springmvc.gestor.model.dto.GrupDto;
 import com.kt.springmvc.gestor.model.dto.SubjectDto;
 import com.kt.springmvc.gestor.model.dto.SubjectDto;
 import com.kt.springmvc.gestor.model.entity.Subject;
@@ -58,6 +59,17 @@ public class SubjectService {
         Subject subject = subjectRepository.findById(id).get();
         subject.setDateDeleted(date);
         subjectRepository.save(subject);
+    }
+
+    public List<SubjectDto> getAllSubjectsOfTeacher() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        User user = userRepository.findByNameOrderByName(authentication.getName());
+        List<SubjectDto> allSubjectsOfTeacher = subjectRepository.findByUserId(user.getId())
+                .stream()
+                .map(s -> modelMapper.map(s, SubjectDto.class))
+                .collect(Collectors.toList());
+        return allSubjectsOfTeacher;
+
     }
 
 }

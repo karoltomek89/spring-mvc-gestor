@@ -119,4 +119,11 @@ public class GrupService {
         return allStudents;
     }
 
+
+    public GrupDto findGrupById(Long id) {
+        Grup g = grupRepository.findById(id).get();
+        GrupDto grup = modelMapper.map(g, GrupDto.class);
+        return grup;
+    }
+
 }

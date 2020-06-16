@@ -4,6 +4,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.sql.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 
@@ -15,7 +16,7 @@ public class User {
     private Long id;
 
     @OneToMany(mappedBy = "user")
-    private Set<Grade> grades;
+    private List<Grade> grades;
 
     @OneToMany(mappedBy = "user")
     private Set<Subject> subjects;
@@ -122,12 +123,16 @@ public class User {
         this.active = active;
     }
 
-    public Set<Grade> getGrades() {
+    public List<Grade> getGrades() {
         return grades;
     }
 
-    public void setGrades(Set<Grade> grades) {
+    public void setGrades(List<Grade> grades) {
         this.grades = grades;
+    }
+
+    public void addGrade(Grade grade) {
+        grades.add(grade);
     }
 
     public Set<Subject> getSubjects() {
