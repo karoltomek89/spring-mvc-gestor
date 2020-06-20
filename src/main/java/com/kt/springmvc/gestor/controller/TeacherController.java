@@ -97,6 +97,6 @@ public class TeacherController {
         if (ADD.equals(action)) {
             gradeService.addGradeToSubject(gradeDto);
         }
-        return "redirect:/teacher/grades";
+        return "redirect:/teacher/grupssubjects";
     }
 }

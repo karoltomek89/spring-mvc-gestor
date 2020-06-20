@@ -1,7 +1,5 @@
 package com.kt.springmvc.gestor.repository;
 
-
-import com.kt.springmvc.gestor.model.entity.Grup;
 import com.kt.springmvc.gestor.model.entity.Subject;
 import org.springframework.data.jpa.repository.JpaRepository;
 

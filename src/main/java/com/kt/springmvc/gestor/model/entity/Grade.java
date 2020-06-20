@@ -11,6 +11,7 @@ public class Grade {
 
     @NotNull
     @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "userId")
     private User user;
 
     @NotNull

@@ -16,13 +16,13 @@ public class User {
     private Long id;
 
     @OneToMany(mappedBy = "user")
-    private List<Grade> grades;
+    private Set<Grade> grades = new HashSet<>();
 
     @OneToMany(mappedBy = "user")
-    private Set<Subject> subjects;
+    private Set<Subject> subjects = new HashSet<>();
 
     @OneToMany(mappedBy = "user")
-    private Set<Grup> grups;
+    private Set<Grup> grups = new HashSet<>();
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "studentGrups_grupId")
@@ -123,11 +123,11 @@ public class User {
         this.active = active;
     }
 
-    public List<Grade> getGrades() {
+    public Set<Grade> getGrades() {
         return grades;
     }
 
-    public void setGrades(List<Grade> grades) {
+    public void setGrades(Set<Grade> grades) {
         this.grades = grades;
     }
 
@@ -179,12 +179,6 @@ public class User {
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", grades=" + grades +
-                ", subjects=" + subjects +
-                ", parents=" + parents +
-                ", students=" + students +
-                ", grups=" + grups +
-                ", studentGrup=" + studentGrup +
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", email='" + email + '\'' +
