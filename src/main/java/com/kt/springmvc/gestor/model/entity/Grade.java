@@ -1,8 +1,11 @@
 package com.kt.springmvc.gestor.model.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
+@Data
 @Entity
 public class Grade {
     @Id
@@ -21,46 +24,5 @@ public class Grade {
     private Long value;
 
     public Grade() {
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Integer getSubjectId() {
-        return subjectId;
-    }
-
-    public void setSubjectId(Integer subjectId) {
-        this.subjectId = subjectId;
-    }
-
-    public Long getValue() {
-        return value;
-    }
-
-    public void setValue(Long value) {
-        this.value = value;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    @Override
-    public String toString() {
-        return "Grade{" +
-                "id=" + id +
-                ", subjectId=" + subjectId +
-                ", value=" + value +
-                '}';
     }
 }

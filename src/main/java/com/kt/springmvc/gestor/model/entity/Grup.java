@@ -1,11 +1,14 @@
 package com.kt.springmvc.gestor.model.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
+@Data
 @Entity
 public class Grup {
     @Id
@@ -32,73 +35,5 @@ public class Grup {
     private Date dateDeleted;
 
     public Grup() {
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public Set<Subject> getSubjects() {
-        return subjects;
-    }
-
-    public void setSubjects(Set<Subject> subjects) {
-        this.subjects = subjects;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Date getDateDeleted() {
-        return dateDeleted;
-    }
-
-    public void setDateDeleted(Date dateDeleted) {
-        this.dateDeleted = dateDeleted;
-    }
-
-    public Set<User> getStudents() {
-        return students;
-    }
-
-    public void setStudents(Set<User> students) {
-        this.students = students;
-    }
-
-    public void addStudentToGrup(User student) {
-        students.add(student);
-    }
-
-    public void deleteStudentFromGrup(User student) {
-        students.remove(student);
-    }
-
-    @Override
-    public String toString() {
-        return "Grup{" +
-                "id=" + id +
-                ", user=" + user +
-                ", subjects=" + subjects +
-                ", students=" + students +
-                ", name='" + name + '\'' +
-                ", dateDeleted=" + dateDeleted +
-                '}';
     }
 }
