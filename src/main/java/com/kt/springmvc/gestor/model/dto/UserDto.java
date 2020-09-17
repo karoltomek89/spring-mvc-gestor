@@ -1,10 +1,12 @@
 package com.kt.springmvc.gestor.model.dto;
 
 import com.kt.springmvc.gestor.model.entity.User;
+import lombok.Data;
 
 import java.util.Date;
 import java.util.Set;
 
+@Data
 public class UserDto {
 
     private Long id;
@@ -19,105 +21,4 @@ public class UserDto {
     private Set<User> students;
     private Long tempParentId;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getSurname() {
-        return surname;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public Date getDateDeleted() {
-        return dateDeleted;
-    }
-
-    public void setDateDeleted(Date dateDeleted) {
-        this.dateDeleted = dateDeleted;
-    }
-
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
-    }
-
-    public boolean isActive() {
-        return active;
-    }
-
-    public void setActive(boolean active) {
-        this.active = active;
-    }
-
-    public Long getTempParentId() {
-        return tempParentId;
-    }
-
-    public void setTempParentId(Long tempParentId) {
-        this.tempParentId = tempParentId;
-    }
-
-    public Set<User> getParents() {
-        return parents;
-    }
-
-    public void setParents(Set<User> parents) {
-        this.parents = parents;
-    }
-
-    public Set<User> getStudents() {
-        return students;
-    }
-
-    public void setStudents(Set<User> students) {
-        this.students = students;
-    }
-
-    @Override
-    public String toString() {
-        return "UserDto{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                ", dateDeleted=" + dateDeleted +
-                ", role='" + role + '\'' +
-                ", active=" + active +
-                '}';
-    }
 }
