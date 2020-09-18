@@ -1,6 +1,7 @@
 package com.kt.springmvc.gestor.model.entity;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -8,9 +9,11 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-@Data
+@Getter
+@Setter
 @Entity
 public class Subject {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -25,6 +28,7 @@ public class Subject {
 
     @NotNull
     private String name;
+
     private Date dateDeleted;
 
     public Subject() {

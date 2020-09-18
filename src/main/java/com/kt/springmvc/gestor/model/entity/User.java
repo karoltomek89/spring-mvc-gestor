@@ -1,15 +1,16 @@
 package com.kt.springmvc.gestor.model.entity;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.sql.Date;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
-@Data
+@Getter
+@Setter
 @Entity
 public class User {
 
@@ -46,16 +47,22 @@ public class User {
 
     @NotNull
     private String name;
+
     @NotNull
     private String surname;
+
     @NotNull
     @Column(unique = true)
     private String email;
     @NotNull
+
     private String password;
+
     private Date dateDeleted;
     @NotNull
+
     private String role;
+
     private boolean active;
 
     public User() {

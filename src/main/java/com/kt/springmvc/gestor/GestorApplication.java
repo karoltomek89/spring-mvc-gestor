@@ -1,6 +1,5 @@
 package com.kt.springmvc.gestor;
 
-import com.kt.springmvc.gestor.model.entity.Grade;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
