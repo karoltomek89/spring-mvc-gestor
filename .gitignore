@@ -30,3 +30,14 @@ build/
 ### VS Code ###
 .vscode/
 /out/
+!/.gitlab-ci.yml.bak
+!/gestor.iml
+!/HELP.md
+!/mvnw
+!/mvnw.cmd
+!/.mvn/
+!/.idea/
+!/out/
+!/out/
+!/.mvn/
+!/.idea/
