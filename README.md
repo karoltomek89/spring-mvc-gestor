@@ -8,6 +8,7 @@ Spring security, JPA, H2 database, Thymeleaf, Bootstrap, Docker, Maven, Postman.
 
 I write code in InteliJ. Test data are insert to the database using Postman(at this moment).
 
-There is a compiled jar file and Docker image available on my dockerhub account.
+There is a compiled jar file (build folder) and Docker image available on my dockerhub account:
+https://hub.docker.com/r/karoltomek/gestor
 
 
