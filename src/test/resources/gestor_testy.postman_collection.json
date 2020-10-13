@@ -1,0 +1,2374 @@
+{
+  "info": {
+    "_postman_id": "7b43089a-e9b8-4c39-bc51-51e4355dfb60",
+    "name": "gestor_testy",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Nauczyciel a",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8080/registeruser?name=na&surname=na&email=na&password=na&role=ROLE_TEACHER",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "registeruser"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "na"
+            },
+            {
+              "key": "surname",
+              "value": "na"
+            },
+            {
+              "key": "email",
+              "value": "na"
+            },
+            {
+              "key": "password",
+              "value": "na"
+            },
+            {
+              "key": "role",
+              "value": "ROLE_TEACHER"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Nauczyciel b",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8080/registeruser?name=nb&surname=nb&email=nb&password=nb&role=ROLE_TEACHER",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "registeruser"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "nb"
+            },
+            {
+              "key": "surname",
+              "value": "nb"
+            },
+            {
+              "key": "email",
+              "value": "nb"
+            },
+            {
+              "key": "password",
+              "value": "nb"
+            },
+            {
+              "key": "role",
+              "value": "ROLE_TEACHER"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Nauczyciel c",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8080/registeruser?name=nc&surname=nc&email=nc&password=nc&role=ROLE_TEACHER",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "registeruser"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "nc"
+            },
+            {
+              "key": "surname",
+              "value": "nc"
+            },
+            {
+              "key": "email",
+              "value": "nc"
+            },
+            {
+              "key": "password",
+              "value": "nc"
+            },
+            {
+              "key": "role",
+              "value": "ROLE_TEACHER"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Nauczyciel d",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8080/registeruser?name=nd&surname=nd&email=nd&password=nd&role=ROLE_TEACHER",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "registeruser"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "nd"
+            },
+            {
+              "key": "surname",
+              "value": "nd"
+            },
+            {
+              "key": "email",
+              "value": "nd"
+            },
+            {
+              "key": "password",
+              "value": "nd"
+            },
+            {
+              "key": "role",
+              "value": "ROLE_TEACHER"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Rodzic a",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8080/registeruser?name=ra&surname=ra&email=ra&password=ra&role=ROLE_PARENT",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "registeruser"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "ra"
+            },
+            {
+              "key": "surname",
+              "value": "ra"
+            },
+            {
+              "key": "email",
+              "value": "ra"
+            },
+            {
+              "key": "password",
+              "value": "ra"
+            },
+            {
+              "key": "role",
+              "value": "ROLE_PARENT"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Rodzic b",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8080/registeruser?name=rb&surname=rb&email=rb&password=rb&role=ROLE_PARENT",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "registeruser"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "rb"
+            },
+            {
+              "key": "surname",
+              "value": "rb"
+            },
+            {
+              "key": "email",
+              "value": "rb"
+            },
+            {
+              "key": "password",
+              "value": "rb"
+            },
+            {
+              "key": "role",
+              "value": "ROLE_PARENT"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Rodzic c",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8080/registeruser?name=rc&surname=rc&email=rc&password=rc&role=ROLE_PARENT",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "registeruser"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "rc"
+            },
+            {
+              "key": "surname",
+              "value": "rc"
+            },
+            {
+              "key": "email",
+              "value": "rc"
+            },
+            {
+              "key": "password",
+              "value": "rc"
+            },
+            {
+              "key": "role",
+              "value": "ROLE_PARENT"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Rodzic d",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8080/registeruser?name=rd&surname=rd&email=rd&password=rd&role=ROLE_PARENT",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "registeruser"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "rd"
+            },
+            {
+              "key": "surname",
+              "value": "rd"
+            },
+            {
+              "key": "email",
+              "value": "rd"
+            },
+            {
+              "key": "password",
+              "value": "rd"
+            },
+            {
+              "key": "role",
+              "value": "ROLE_PARENT"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Student a",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8080/registeruser?name=sa&surname=sa&email=sa&password=sa&role=ROLE_STUDENT",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "registeruser"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "sa"
+            },
+            {
+              "key": "surname",
+              "value": "sa"
+            },
+            {
+              "key": "email",
+              "value": "sa"
+            },
+            {
+              "key": "password",
+              "value": "sa"
+            },
+            {
+              "key": "role",
+              "value": "ROLE_STUDENT"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Student b",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8080/registeruser?name=sb&surname=sb&email=sb&password=sb&role=ROLE_STUDENT",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "registeruser"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "sb"
+            },
+            {
+              "key": "surname",
+              "value": "sb"
+            },
+            {
+              "key": "email",
+              "value": "sb"
+            },
+            {
+              "key": "password",
+              "value": "sb"
+            },
+            {
+              "key": "role",
+              "value": "ROLE_STUDENT"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Student c",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8080/registeruser?name=sc&surname=sc&email=sc&password=sc&role=ROLE_STUDENT",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "registeruser"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "sc"
+            },
+            {
+              "key": "surname",
+              "value": "sc"
+            },
+            {
+              "key": "email",
+              "value": "sc"
+            },
+            {
+              "key": "password",
+              "value": "sc"
+            },
+            {
+              "key": "role",
+              "value": "ROLE_STUDENT"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Student d",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8080/registeruser?name=sd&surname=sd&email=sd&password=sd&role=ROLE_STUDENT",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "registeruser"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "sd"
+            },
+            {
+              "key": "surname",
+              "value": "sd"
+            },
+            {
+              "key": "email",
+              "value": "sd"
+            },
+            {
+              "key": "password",
+              "value": "sd"
+            },
+            {
+              "key": "role",
+              "value": "ROLE_STUDENT"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Dyrektro da",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8080/registeruser?name=da&surname=da&email=da&password=da&role=ROLE_DIRECTOR",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "registeruser"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "da"
+            },
+            {
+              "key": "surname",
+              "value": "da"
+            },
+            {
+              "key": "email",
+              "value": "da"
+            },
+            {
+              "key": "password",
+              "value": "da"
+            },
+            {
+              "key": "role",
+              "value": "ROLE_DIRECTOR"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Logowanie admin",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8080/login-process?email=director&password=password",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "login-process"
+          ],
+          "query": [
+            {
+              "key": "email",
+              "value": "director"
+            },
+            {
+              "key": "password",
+              "value": "password"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Aktywacja da",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/director/users?id=13&action=activate",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "director",
+            "users"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "13"
+            },
+            {
+              "key": "action",
+              "value": "activate"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Wylogowanie admin",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8080/logout",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "logout"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Logowanie da",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8080/login-process?email=da&password=da",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "login-process"
+          ],
+          "query": [
+            {
+              "key": "email",
+              "value": "da"
+            },
+            {
+              "key": "password",
+              "value": "da"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Aktywacja na",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/director/users?id=1&action=activate",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "director",
+            "users"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "1"
+            },
+            {
+              "key": "action",
+              "value": "activate"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Aktywacja nb",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/director/users?id=2&action=activate",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "director",
+            "users"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "2"
+            },
+            {
+              "key": "action",
+              "value": "activate"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Aktywacja nc",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/director/users?id=3&action=activate",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "director",
+            "users"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "3"
+            },
+            {
+              "key": "action",
+              "value": "activate"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Aktywacja nd",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/director/users?id=4&action=activate",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "director",
+            "users"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "4"
+            },
+            {
+              "key": "action",
+              "value": "activate"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Aktywacja ra",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/director/users?id=5&action=activate",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "director",
+            "users"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "5"
+            },
+            {
+              "key": "action",
+              "value": "activate"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Aktywacja rb",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/director/users?id=6&action=activate",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "director",
+            "users"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "6"
+            },
+            {
+              "key": "action",
+              "value": "activate"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Aktywacja rc",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/director/users?id=7&action=activate",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "director",
+            "users"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "7"
+            },
+            {
+              "key": "action",
+              "value": "activate"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Aktywacja rd",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/director/users?id=8&action=activate",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "director",
+            "users"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "8"
+            },
+            {
+              "key": "action",
+              "value": "activate"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Aktywacja sa",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/director/users?id=9&action=activate",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "director",
+            "users"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "9"
+            },
+            {
+              "key": "action",
+              "value": "activate"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Aktywacja sb",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/director/users?id=10&action=activate",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "director",
+            "users"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "10"
+            },
+            {
+              "key": "action",
+              "value": "activate"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Aktywacja sc",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/director/users?id=11&action=activate",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "director",
+            "users"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "11"
+            },
+            {
+              "key": "action",
+              "value": "activate"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Aktywacja sd",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/director/users?id=12&action=activate",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "director",
+            "users"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "12"
+            },
+            {
+              "key": "action",
+              "value": "activate"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Przedmiot Logika",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/director/subjects?name=Logika&userId=1&action=add",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "director",
+            "subjects"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "Logika"
+            },
+            {
+              "key": "userId",
+              "value": "1"
+            },
+            {
+              "key": "action",
+              "value": "add"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Przedmiot Matematyka",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/director/subjects?name=Matematyka&userId=2&action=add",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "director",
+            "subjects"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "Matematyka"
+            },
+            {
+              "key": "userId",
+              "value": "2"
+            },
+            {
+              "key": "action",
+              "value": "add"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Przedmiot Fizyka",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/director/subjects?name=Fizyka&userId=3&action=add",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "director",
+            "subjects"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "Fizyka"
+            },
+            {
+              "key": "userId",
+              "value": "3"
+            },
+            {
+              "key": "action",
+              "value": "add"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Przedmiot Technika",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/director/subjects?name=Technika&userId=4&action=add",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "director",
+            "subjects"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "Technika"
+            },
+            {
+              "key": "userId",
+              "value": "4"
+            },
+            {
+              "key": "action",
+              "value": "add"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Klasa V",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/director/grups?name=V&userId=1&action=add",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "director",
+            "grups"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "V"
+            },
+            {
+              "key": "userId",
+              "value": "1"
+            },
+            {
+              "key": "action",
+              "value": "add"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Klasa VI",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/director/grups?name=VI&userId=2&action=add",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "director",
+            "grups"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "VI"
+            },
+            {
+              "key": "userId",
+              "value": "2"
+            },
+            {
+              "key": "action",
+              "value": "add"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Dodaj logika do klasa V",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/director/grups?id=1&tempSubjectId=1&action=addsubject",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "director",
+            "grups"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "1"
+            },
+            {
+              "key": "tempSubjectId",
+              "value": "1"
+            },
+            {
+              "key": "action",
+              "value": "addsubject"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Dodaj matematyka do klasa V",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/director/grups?id=1&tempSubjectId=2&action=addsubject",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "director",
+            "grups"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "1"
+            },
+            {
+              "key": "tempSubjectId",
+              "value": "2"
+            },
+            {
+              "key": "action",
+              "value": "addsubject"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Dodaj fizyka do klasa VI",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/director/grups?id=2&tempSubjectId=3&action=addsubject",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "director",
+            "grups"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "2"
+            },
+            {
+              "key": "tempSubjectId",
+              "value": "3"
+            },
+            {
+              "key": "action",
+              "value": "addsubject"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Dodaj technika do klasa VI",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/director/grups?id=2&tempSubjectId=4&action=addsubject",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "director",
+            "grups"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "2"
+            },
+            {
+              "key": "tempSubjectId",
+              "value": "4"
+            },
+            {
+              "key": "action",
+              "value": "addsubject"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Message od da do na",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/director/messages?receiver=na&topic=temat1&text=tekst1&action=send",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "director",
+            "messages"
+          ],
+          "query": [
+            {
+              "key": "receiver",
+              "value": "na"
+            },
+            {
+              "key": "topic",
+              "value": "temat1"
+            },
+            {
+              "key": "text",
+              "value": "tekst1"
+            },
+            {
+              "key": "action",
+              "value": "send"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Message od da do nb",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/director/messages?receiver=nb&topic=temat2&text=tekst2&action=send",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "director",
+            "messages"
+          ],
+          "query": [
+            {
+              "key": "receiver",
+              "value": "nb"
+            },
+            {
+              "key": "topic",
+              "value": "temat2"
+            },
+            {
+              "key": "text",
+              "value": "tekst2"
+            },
+            {
+              "key": "action",
+              "value": "send"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Message od da do nc",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/director/messages?receiver=nc&topic=temat3&text=tekst3&action=send",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "director",
+            "messages"
+          ],
+          "query": [
+            {
+              "key": "receiver",
+              "value": "nc"
+            },
+            {
+              "key": "topic",
+              "value": "temat3"
+            },
+            {
+              "key": "text",
+              "value": "tekst3"
+            },
+            {
+              "key": "action",
+              "value": "send"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Message od da do nd",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/director/messages?receiver=nd&topic=temat4&text=tekst4&action=send",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "director",
+            "messages"
+          ],
+          "query": [
+            {
+              "key": "receiver",
+              "value": "nd"
+            },
+            {
+              "key": "topic",
+              "value": "temat4"
+            },
+            {
+              "key": "text",
+              "value": "tekst4"
+            },
+            {
+              "key": "action",
+              "value": "send"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Message od da do ra",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/director/messages?receiver=ra&topic=temat5&text=tekst5&action=send",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "director",
+            "messages"
+          ],
+          "query": [
+            {
+              "key": "receiver",
+              "value": "ra"
+            },
+            {
+              "key": "topic",
+              "value": "temat5"
+            },
+            {
+              "key": "text",
+              "value": "tekst5"
+            },
+            {
+              "key": "action",
+              "value": "send"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Message od da do rb",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/director/messages?receiver=rb&topic=temat5&text=tekst5&action=send",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "director",
+            "messages"
+          ],
+          "query": [
+            {
+              "key": "receiver",
+              "value": "rb"
+            },
+            {
+              "key": "topic",
+              "value": "temat5"
+            },
+            {
+              "key": "text",
+              "value": "tekst5"
+            },
+            {
+              "key": "action",
+              "value": "send"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Message od da do rc",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/director/messages?receiver=rc&topic=temat5&text=tekst5&action=send",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "director",
+            "messages"
+          ],
+          "query": [
+            {
+              "key": "receiver",
+              "value": "rc"
+            },
+            {
+              "key": "topic",
+              "value": "temat5"
+            },
+            {
+              "key": "text",
+              "value": "tekst5"
+            },
+            {
+              "key": "action",
+              "value": "send"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Message od da do rd",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/director/messages?receiver=rd&topic=temat5&text=tekst5&action=send",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "director",
+            "messages"
+          ],
+          "query": [
+            {
+              "key": "receiver",
+              "value": "rd"
+            },
+            {
+              "key": "topic",
+              "value": "temat5"
+            },
+            {
+              "key": "text",
+              "value": "tekst5"
+            },
+            {
+              "key": "action",
+              "value": "send"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Wylogowanie da",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8080/logout",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "logout"
+          ],
+          "query": [
+            {
+              "key": "username",
+              "value": "g",
+              "disabled": true
+            },
+            {
+              "key": "password",
+              "value": "g",
+              "disabled": true
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Logowanie na",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8080/login-process?email=na&password=na",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "login-process"
+          ],
+          "query": [
+            {
+              "key": "email",
+              "value": "na"
+            },
+            {
+              "key": "password",
+              "value": "na"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Message od na do sa",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/teacher/messages?receiver=sa&topic=temat6&text=tekst6&action=send",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "teacher",
+            "messages"
+          ],
+          "query": [
+            {
+              "key": "receiver",
+              "value": "sa"
+            },
+            {
+              "key": "topic",
+              "value": "temat6"
+            },
+            {
+              "key": "text",
+              "value": "tekst6"
+            },
+            {
+              "key": "action",
+              "value": "send"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Message od na do sb",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/teacher/messages?receiver=sb&topic=temat6&text=tekst6&action=send",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "teacher",
+            "messages"
+          ],
+          "query": [
+            {
+              "key": "receiver",
+              "value": "sb"
+            },
+            {
+              "key": "topic",
+              "value": "temat6"
+            },
+            {
+              "key": "text",
+              "value": "tekst6"
+            },
+            {
+              "key": "action",
+              "value": "send"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Message od na do sc",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/teacher/messages?receiver=sc&topic=temat6&text=tekst6&action=send",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "teacher",
+            "messages"
+          ],
+          "query": [
+            {
+              "key": "receiver",
+              "value": "sc"
+            },
+            {
+              "key": "topic",
+              "value": "temat6"
+            },
+            {
+              "key": "text",
+              "value": "tekst6"
+            },
+            {
+              "key": "action",
+              "value": "send"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Message od na do sd",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/teacher/messages?receiver=sd&topic=temat6&text=tekst6&action=send",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "teacher",
+            "messages"
+          ],
+          "query": [
+            {
+              "key": "receiver",
+              "value": "sd"
+            },
+            {
+              "key": "topic",
+              "value": "temat6"
+            },
+            {
+              "key": "text",
+              "value": "tekst6"
+            },
+            {
+              "key": "action",
+              "value": "send"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Wylogowanie na",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8080/logout",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "logout"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Logowanie da",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8080/login-process?email=da&password=da",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "login-process"
+          ],
+          "query": [
+            {
+              "key": "email",
+              "value": "da"
+            },
+            {
+              "key": "password",
+              "value": "da"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Dodanie sa do klasy V",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8080/director/students?id=1&tempStudentId=9&action=add",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "director",
+            "students"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "1"
+            },
+            {
+              "key": "tempStudentId",
+              "value": "9"
+            },
+            {
+              "key": "action",
+              "value": "add"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Dodanie sb do klasy V",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8080/director/students?id=1&tempStudentId=10&action=add",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "director",
+            "students"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "1"
+            },
+            {
+              "key": "tempStudentId",
+              "value": "10"
+            },
+            {
+              "key": "action",
+              "value": "add"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Dodanie sc do klasy VI",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8080/director/students?id=2&tempStudentId=11&action=add",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "director",
+            "students"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "2"
+            },
+            {
+              "key": "tempStudentId",
+              "value": "11"
+            },
+            {
+              "key": "action",
+              "value": "add"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Dodanie sd do klasy VI",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8080/director/students?id=2&tempStudentId=12&action=add",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "director",
+            "students"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "2"
+            },
+            {
+              "key": "tempStudentId",
+              "value": "12"
+            },
+            {
+              "key": "action",
+              "value": "add"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Wylogowanie da",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8080/logout",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "logout"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Logowanie na",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8080/login-process?email=na&password=na",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "login-process"
+          ],
+          "query": [
+            {
+              "key": "email",
+              "value": "na"
+            },
+            {
+              "key": "password",
+              "value": "na"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Dodanie oceny sa",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8080/teacher/grades/?studentId=9&value=3&subjectId=1&action=add",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "teacher",
+            "grades",
+            ""
+          ],
+          "query": [
+            {
+              "key": "studentId",
+              "value": "9"
+            },
+            {
+              "key": "value",
+              "value": "3"
+            },
+            {
+              "key": "subjectId",
+              "value": "1"
+            },
+            {
+              "key": "action",
+              "value": "add"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Dodanie oceny sa",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8080/teacher/grades/?studentId=9&value=3&subjectId=1&action=add",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "teacher",
+            "grades",
+            ""
+          ],
+          "query": [
+            {
+              "key": "studentId",
+              "value": "9"
+            },
+            {
+              "key": "value",
+              "value": "3"
+            },
+            {
+              "key": "subjectId",
+              "value": "1"
+            },
+            {
+              "key": "action",
+              "value": "add"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Dodanie oceny sb",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8080/teacher/grades/?studentId=10&value=1&subjectId=1&action=add",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "teacher",
+            "grades",
+            ""
+          ],
+          "query": [
+            {
+              "key": "studentId",
+              "value": "10"
+            },
+            {
+              "key": "value",
+              "value": "1"
+            },
+            {
+              "key": "subjectId",
+              "value": "1"
+            },
+            {
+              "key": "action",
+              "value": "add"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Dodanie oceny sb",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8080/teacher/grades/?studentId=10&value=6&subjectId=1&action=add",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "teacher",
+            "grades",
+            ""
+          ],
+          "query": [
+            {
+              "key": "studentId",
+              "value": "10"
+            },
+            {
+              "key": "value",
+              "value": "6"
+            },
+            {
+              "key": "subjectId",
+              "value": "1"
+            },
+            {
+              "key": "action",
+              "value": "add"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "protocolProfileBehavior": {}
+}
