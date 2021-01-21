@@ -10,7 +10,7 @@ Application diagram is pleaced in main/resources.
 
 I write code in InteliJ. Test data are insert to the database using Postman(at this moment).
 
-There is a compiled jar file (build folder) and Docker image available on my dockerhub account:
+There is no compiled jar file in build folder, but Docker image is available on my dockerhub account:
 https://hub.docker.com/r/karoltomek/gestor
 
 
